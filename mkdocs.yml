@@ -38,6 +38,14 @@ nav:
     - 아키텍처 및 설계: frontend/02-architecture-and-design.md
     - 운영 가이드: frontend/03-operations-guide.md
     - 이슈 및 히스토리: frontend/04-issues-and-history.md
+  - 계획서:
+    - 크롤링 서버 증량: plans/server-scaling.md
+    - 워크스페이스 이관 (MINDK→INCRO): plans/workspace-migration.md
+  - 이슈:
+    - BUG-002 PID 저장실패 / 좀비세션: issues/bug-002-pid-zombie.md
+    - 로그 자동 정리 검증: issues/log-cleanup-checklist.md
+    - 운영서버 스토리지 분석: issues/storage-analysis.md
+    - 좀비 컨테이너 및 디스크 관리: issues/zombie-container-disk.md
 
 markdown_extensions:
   - tables
