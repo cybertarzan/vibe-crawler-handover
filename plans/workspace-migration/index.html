@@ -2058,6 +2058,17 @@
 현재 운영서버에서 Legacy 경로는 비어있는 것으로 확인됨.</p>
 <hr />
 <h2 id="5">5. 실행 순서</h2>
+<pre class="mermaid"><code>flowchart LR
+    A["0. 실행 중&lt;br/&gt;세션 확인"] --&gt; B["1. DB 백업&lt;br/&gt;(pg_dump)"]
+    B --&gt; C["2. DB UPDATE&lt;br/&gt;(workspace_id, name)"]
+    C --&gt; D["3. 파일시스템&lt;br/&gt;mv 실행"]
+    D --&gt; E["4. 검증"]
+    E --&gt; F["5. 완료 처리"]
+
+    style A fill:#FB8C00,color:#fff
+    style C fill:#4051B5,color:#fff
+    style D fill:#4051B5,color:#fff
+    style F fill:#43A047,color:#fff</code></pre>
 <table>
 <thead>
 <tr>
@@ -2158,6 +2169,16 @@
 <p>⚠️ 이관 시 누락된 항목들이 발견되어 보완 필요</p>
 </blockquote>
 <h3 id="9-1">9-1. 문제 요약</h3>
+<pre class="mermaid"><code>flowchart TD
+    A["이관: projects.workspace_id&lt;br/&gt;22222222 → 11111111"] --&gt; B["jobs.script_path&lt;br/&gt;❌ 미업데이트"]
+    B --&gt; C["세션 디렉토리:&lt;br/&gt;11111111에 생성"]
+    B --&gt; D["스크립트 참조:&lt;br/&gt;22222222에서 읽음"]
+    C --&gt; E["경로 불일치 💥"]
+    D --&gt; E
+    E --&gt; F["백엔드가 구 경로에&lt;br/&gt;scripts/ 자동 재생성"]
+
+    style B fill:#e53935,color:#fff
+    style E fill:#b71c1c,color:#fff</code></pre>
 <p>이관 작업에서 <code>projects</code> 테이블만 업데이트하고, <strong><code>jobs.script_path</code>는 업데이트하지 않음</strong>.
 이로 인해 이관 후에도 구 workspace(<code>22222222-...</code>) 경로를 참조하는 문제 발생.</p>
 <table>
