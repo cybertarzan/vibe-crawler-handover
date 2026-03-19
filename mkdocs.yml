@@ -45,7 +45,6 @@ nav:
       - 방안 B - Worker 분리 (권장): plans/server-scaling/02-worker-separation.md
       - 방안 C - 멀티 Master: plans/server-scaling/03-multi-master.md
       - AWS 인프라 및 실행 계획: plans/server-scaling/04-infra-and-plan.md
-    - 워크스페이스 이관 (MINDK→INCRO): plans/workspace-migration.md
   - 이슈:
     - BUG-002 PID 저장실패 / 좀비세션: issues/bug-002-pid-zombie.md
     - 로그 자동 정리 검증: issues/log-cleanup-checklist.md

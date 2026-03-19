@@ -1615,9 +1615,7 @@
     B --&gt; C{"날짜 &gt; 보관기간?"}
     C --&gt;|10일 초과| D["rm -rf 삭제"]
     C --&gt;|10일 이내| E["유지"]
-
-    style D fill:#e53935,color:#fff
-    style E fill:#43A047,color:#fff</code></pre>
+</code></pre>
 <p><code>get_old_session_directories()</code>에서 경로 불일치 버그를 수정함 (<code>base_path/RESULTS_DIR</code> → <code>results_base_path</code>).
 이전까지 자동 정리가 작동하지 않아 2월 데이터까지 남아있었음.</p>
 <p><strong>배포 시점</strong>: 2026-03-17 10:47 KST

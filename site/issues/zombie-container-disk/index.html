@@ -1589,10 +1589,7 @@
         J["24h+ 미사용 리소스 정리"]
         J -.-&gt;|한계| K["실행 중 컨테이너 미포함"]
     end
-
-    style E fill:#e53935,color:#fff
-    style I fill:#FB8C00,color:#fff
-    style K fill:#FB8C00,color:#fff</code></pre>
+</code></pre>
 <h3 id="3-1-recover_zombie_jobs_servicepy">3-1. 서버 재시작 시 (<code>recover_zombie_jobs_service.py</code>)</h3>
 <ul>
 <li>서버 시작 10초 후 1회 실행</li>
@@ -1647,9 +1644,7 @@
     B --&gt; C{"DB에서&lt;br/&gt;RUNNING?"}
     C --&gt;|Yes| D["유지"]
     C --&gt;|No / 없음| E["docker stop&lt;br/&gt;+ docker rm -f"]
-
-    style D fill:#43A047,color:#fff
-    style E fill:#e53935,color:#fff</code></pre>
+</code></pre>
 <p><strong>변경 파일:</strong>
 - <code>docker_cleanup_port.py</code> — 메서드 2개 추가
 - <code>docker_cleanup_adapter.py</code> — 구현

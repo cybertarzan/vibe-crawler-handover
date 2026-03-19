@@ -1443,9 +1443,7 @@
     C --&gt; D["FAILED 처리&lt;br/&gt;(실제로는 정상 실행 중)"]
     D --&gt; E["kill 조건: PID NULL이면 스킵"]
     E --&gt; F["좀비 프로세스 방치 💀"]
-
-    style A fill:#e53935,color:#fff
-    style F fill:#b71c1c,color:#fff</code></pre>
+</code></pre>
 <ol>
 <li><strong>PID 콜백 DB 세션 문제</strong>: <code>_pid_callback</code>이 외부 <code>session_repo</code>의 DB 세션을 공유하여 커밋이 안 됨 → <code>process_identifier = NULL</code></li>
 <li><strong>좀비 감지기 오판</strong>: 유예 5분 초과 + PID NULL + 결과 파일 없음 → FAILED 처리 (실제로는 정상 실행 중)</li>

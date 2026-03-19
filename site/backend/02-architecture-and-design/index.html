@@ -1597,17 +1597,7 @@
     SHARED[shared] -.-&gt; WS
     SHARED -.-&gt; SCHED
     SHARED -.-&gt; STORAGE
-
-    style WS fill:#4051B5,color:#fff
-    style PROJ fill:#4051B5,color:#fff
-    style JOB fill:#4051B5,color:#fff
-    style CRAWL fill:#e53935,color:#fff
-    style AIFIX fill:#FB8C00,color:#fff
-    style ENHANCE fill:#FB8C00,color:#fff
-    style SCRIPT fill:#1565C0,color:#fff
-    style SCHED fill:#43A047,color:#fff
-    style STORAGE fill:#43A047,color:#fff
-    style WORKFLOW fill:#8E24AA,color:#fff</code></pre>
+</code></pre>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>backend/
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── workspace/                       # 워크스페이스 도메인
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   └── project/                     # 프로젝트 서브 도메인
@@ -1884,9 +1874,7 @@
     D --&gt; E{"사용자 선택"}
     E --&gt;|재실행| F["수정 스크립트로 재실행"]
     E --&gt;|적용| G["원본 스크립트에 적용"]
-
-    style A fill:#e53935,color:#fff
-    style D fill:#43A047,color:#fff</code></pre>
+</code></pre>
 <h3 id="63">6.3 상태 전이</h3>
 <p><strong>Job 상태:</strong></p>
 <pre class="mermaid"><code>flowchart LR
@@ -1896,22 +1884,13 @@
     RUNNING --&gt;|실패| FAILED["🔴 FAILED"]
     COMPLETED --&gt;|재스케줄| IDLE
     FAILED --&gt;|재스케줄| IDLE
-
-    style IDLE fill:#9E9E9E,color:#fff
-    style PENDING fill:#FB8C00,color:#fff
-    style RUNNING fill:#1565C0,color:#fff
-    style COMPLETED fill:#43A047,color:#fff
-    style FAILED fill:#e53935,color:#fff</code></pre>
+</code></pre>
 <p><strong>Session 상태:</strong></p>
 <pre class="mermaid"><code>flowchart LR
     SP["🟡 PENDING"] --&gt;|실행 시작| SR["🔵 RUNNING"]
     SR --&gt;|성공| SC["🟢 COMPLETED"]
     SR --&gt;|실패| SF["🔴 FAILED"]
-
-    style SP fill:#FB8C00,color:#fff
-    style SR fill:#1565C0,color:#fff
-    style SC fill:#43A047,color:#fff
-    style SF fill:#e53935,color:#fff</code></pre>
+</code></pre>
 <h3 id="64-api-incross-i-flow">6.4 후처리 API (Incross i-flow)</h3>
 <table>
 <thead>
