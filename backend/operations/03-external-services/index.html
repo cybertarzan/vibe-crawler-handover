@@ -10,29 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/">
+        <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/backend/operations/03-external-services/">
       
       
+        <link rel="prev" href="../02-monitoring-logs/">
       
-        <link rel="next" href="backend/01-project-overview/">
+      
+        <link rel="next" href="../04-db-management/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Vibe Crawling Platform - 인수인계 문서</title>
+        <title>외부 서비스 연동 - Vibe Crawling Platform - 인수인계 문서</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vibe-crawling-platform" class="md-skip">
+        <a href="#_1" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="." title="Vibe Crawling Platform - 인수인계 문서" class="md-header__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
+    <a href="../../.." title="Vibe Crawling Platform - 인수인계 문서" class="md-header__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              외부 서비스 연동
             
           </span>
         </div>
@@ -228,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Vibe Crawling Platform - 인수인계 문서" class="md-nav__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
+    <a href="../../.." title="Vibe Crawling Platform - 인수인계 문서" class="md-nav__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -255,37 +257,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -301,87 +276,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📋 문서 구성
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📋 문서 구성">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#frontend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Frontend
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        계획서
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        이슈
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -390,8 +284,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -402,13 +298,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -429,7 +323,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -447,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/01-project-overview/" class="md-nav__link">
+      <a href="../../01-project-overview/" class="md-nav__link">
         
   
   
@@ -475,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/02-architecture-and-design/" class="md-nav__link">
+      <a href="../../02-architecture-and-design/" class="md-nav__link">
         
   
   
@@ -500,6 +394,8 @@
                 
   
   
+    
+  
   
   
     
@@ -509,13 +405,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -536,7 +430,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -554,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/operations/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -582,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/operations/01-build-deploy/" class="md-nav__link">
+      <a href="../01-build-deploy/" class="md-nav__link">
         
   
   
@@ -610,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/operations/02-monitoring-logs/" class="md-nav__link">
+      <a href="../02-monitoring-logs/" class="md-nav__link">
         
   
   
@@ -635,10 +529,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="backend/operations/03-external-services/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    외부 서비스 연동
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -654,6 +575,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#incross-i-flow-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incross i-flow API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mail 알림 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -666,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/operations/04-db-management/" class="md-nav__link">
+      <a href="../04-db-management/" class="md-nav__link">
         
   
   
@@ -694,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/operations/05-storage-planning/" class="md-nav__link">
+      <a href="../05-storage-planning/" class="md-nav__link">
         
   
   
@@ -730,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backend/04-issues-and-history/" class="md-nav__link">
+      <a href="../../04-issues-and-history/" class="md-nav__link">
         
   
   
@@ -819,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="frontend/01-project-overview/" class="md-nav__link">
+      <a href="../../../frontend/01-project-overview/" class="md-nav__link">
         
   
   
@@ -847,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="frontend/02-architecture-and-design/" class="md-nav__link">
+      <a href="../../../frontend/02-architecture-and-design/" class="md-nav__link">
         
   
   
@@ -875,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="frontend/03-operations-guide/" class="md-nav__link">
+      <a href="../../../frontend/03-operations-guide/" class="md-nav__link">
         
   
   
@@ -903,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="frontend/04-issues-and-history/" class="md-nav__link">
+      <a href="../../../frontend/04-issues-and-history/" class="md-nav__link">
         
   
   
@@ -1043,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plans/server-scaling/" class="md-nav__link">
+      <a href="../../../plans/server-scaling/" class="md-nav__link">
         
   
   
@@ -1071,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plans/server-scaling/01-scale-up/" class="md-nav__link">
+      <a href="../../../plans/server-scaling/01-scale-up/" class="md-nav__link">
         
   
   
@@ -1099,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plans/server-scaling/02-worker-separation/" class="md-nav__link">
+      <a href="../../../plans/server-scaling/02-worker-separation/" class="md-nav__link">
         
   
   
@@ -1127,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plans/server-scaling/03-multi-master/" class="md-nav__link">
+      <a href="../../../plans/server-scaling/03-multi-master/" class="md-nav__link">
         
   
   
@@ -1155,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plans/server-scaling/04-infra-and-plan/" class="md-nav__link">
+      <a href="../../../plans/server-scaling/04-infra-and-plan/" class="md-nav__link">
         
   
   
@@ -1252,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="issues/bug-002-pid-zombie/" class="md-nav__link">
+      <a href="../../../issues/bug-002-pid-zombie/" class="md-nav__link">
         
   
   
@@ -1280,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="issues/log-cleanup-checklist/" class="md-nav__link">
+      <a href="../../../issues/log-cleanup-checklist/" class="md-nav__link">
         
   
   
@@ -1308,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="issues/storage-analysis/" class="md-nav__link">
+      <a href="../../../issues/storage-analysis/" class="md-nav__link">
         
   
   
@@ -1336,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="issues/zombie-container-disk/" class="md-nav__link">
+      <a href="../../../issues/zombie-container-disk/" class="md-nav__link">
         
   
   
@@ -1391,63 +1365,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#incross-i-flow-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📋 문서 구성
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📋 문서 구성">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend
+        Incross i-flow API
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#frontend" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#openai-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Frontend
+        OpenAI API
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#mail-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        계획서
+        Mail 알림 API
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        이슈
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1471,111 +1417,43 @@
   
 
 
-<h1 id="vibe-crawling-platform">Vibe Crawling Platform 인수인계 문서</h1>
-<blockquote>
-<p>최종 업데이트: 2026-03-19</p>
-</blockquote>
-<h2 id="_1">📋 문서 구성</h2>
-<h3 id="backend">Backend</h3>
+<h1 id="_1">외부 서비스 연동</h1>
+<hr />
+<h2 id="incross-i-flow-api">Incross i-flow API</h2>
 <table>
 <thead>
 <tr>
-<th>문서</th>
-<th>내용</th>
+<th>항목</th>
+<th>Dev</th>
+<th>Prod</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="backend/01-project-overview/">프로젝트 개요</a></td>
-<td>기술 스택, 디렉토리 구조, 핵심 개념</td>
+<td>Base URL</td>
+<td><code>https://dev.i-flow.kr/request/api</code></td>
+<td><code>https://i-flow.kr/request/api</code></td>
 </tr>
 <tr>
-<td><a href="backend/02-architecture-and-design/">아키텍처 및 설계</a></td>
-<td>헥사고날 아키텍처, 모듈 구조, 데이터 흐름</td>
-</tr>
-<tr>
-<td><a href="backend/03-operations-guide.md">운영 가이드</a></td>
-<td>배포, 모니터링, 트러블슈팅</td>
-</tr>
-<tr>
-<td><a href="backend/04-issues-and-history/">이슈 및 히스토리</a></td>
-<td>알려진 이슈, 변경 이력</td>
+<td>연결 모드</td>
+<td>local: <code>tunnel</code>, dev/prod: <code>direct</code></td>
+<td><code>direct</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="frontend">Frontend</h3>
-<table>
-<thead>
-<tr>
-<th>문서</th>
-<th>내용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="frontend/01-project-overview/">프로젝트 개요</a></td>
-<td>기술 스택, 디렉토리 구조, 핵심 개념</td>
-</tr>
-<tr>
-<td><a href="frontend/02-architecture-and-design/">아키텍처 및 설계</a></td>
-<td>컴포넌트 구조, 상태 관리, API 연동</td>
-</tr>
-<tr>
-<td><a href="frontend/03-operations-guide/">운영 가이드</a></td>
-<td>배포, 환경 설정</td>
-</tr>
-<tr>
-<td><a href="frontend/04-issues-and-history/">이슈 및 히스토리</a></td>
-<td>알려진 이슈, 변경 이력</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">계획서</h3>
-<table>
-<thead>
-<tr>
-<th>문서</th>
-<th>내용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="plans/server-scaling.md">크롤링 서버 증량</a></td>
-<td>서버 증량 계획, 인프라 구성</td>
-</tr>
-<tr>
-<td><a href="plans/workspace-migration.md">워크스페이스 이관 (MINDK→INCRO)</a></td>
-<td>프로젝트 이관 절차 및 결과</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_3">이슈</h3>
-<table>
-<thead>
-<tr>
-<th>문서</th>
-<th>내용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="issues/bug-002-pid-zombie/">BUG-002 PID 저장실패 / 좀비세션</a></td>
-<td>PID 저장 실패로 인한 좀비 세션 이슈</td>
-</tr>
-<tr>
-<td><a href="issues/log-cleanup-checklist/">로그 자동 정리 검증</a></td>
-<td>로그 자동 정리 체크리스트 및 검증 결과</td>
-</tr>
-<tr>
-<td><a href="issues/storage-analysis/">운영서버 스토리지 분석</a></td>
-<td>운영서버 디스크 사용량 분석</td>
-</tr>
-<tr>
-<td><a href="issues/zombie-container-disk/">좀비 컨테이너 및 디스크 관리</a></td>
-<td>좀비 컨테이너 정리 및 디스크 관리</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>활성화 조건: <code>is_api_transmission_enabled = True</code> + Workspace <code>data_api_url</code> 설정</li>
+</ul>
+<h2 id="openai-api">OpenAI API</h2>
+<ul>
+<li><strong>용도</strong>: AI Auto Fix (크롤링 실패 분석 및 스크립트 수정), 입력정보 추가 (크롤링 대상 사이트 분석 및 입력 항목 자동 생성)</li>
+<li><strong>키 관리</strong>: <code>.env</code> 파일의 <code>OPENAI_API_KEY</code></li>
+</ul>
+<h2 id="mail-api">Mail 알림 API</h2>
+<ul>
+<li><strong>URL</strong>: <code>MAIL_API_URL</code></li>
+<li><strong>트리거</strong>: Job 완료/실패 시 알림 수신자에게 메일 발송</li>
+</ul>
 
 
 
@@ -1631,10 +1509,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
