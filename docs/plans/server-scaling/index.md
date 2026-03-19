@@ -18,9 +18,6 @@ graph TD
         SS["system_storage<br/>(공유 볼륨)"]
     end
 
-    style BE fill:#4051B5,color:#fff
-    style CRAWL fill:#e53935,color:#fff
-    style PG fill:#43A047,color:#fff
 ```
 
 ### 현재 배치 동작 방식

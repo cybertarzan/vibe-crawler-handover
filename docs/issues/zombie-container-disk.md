@@ -52,9 +52,6 @@ flowchart TD
         J -.->|한계| K["실행 중 컨테이너 미포함"]
     end
 
-    style E fill:#e53935,color:#fff
-    style I fill:#FB8C00,color:#fff
-    style K fill:#FB8C00,color:#fff
 ```
 
 ### 3-1. 서버 재시작 시 (`recover_zombie_jobs_service.py`)
@@ -98,8 +95,6 @@ flowchart LR
     C -->|Yes| D["유지"]
     C -->|No / 없음| E["docker stop<br/>+ docker rm -f"]
 
-    style D fill:#43A047,color:#fff
-    style E fill:#e53935,color:#fff
 ```
 
 **변경 파일:**

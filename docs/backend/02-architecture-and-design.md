@@ -86,16 +86,6 @@ graph TD
     SHARED -.-> SCHED
     SHARED -.-> STORAGE
 
-    style WS fill:#4051B5,color:#fff
-    style PROJ fill:#4051B5,color:#fff
-    style JOB fill:#4051B5,color:#fff
-    style CRAWL fill:#e53935,color:#fff
-    style AIFIX fill:#FB8C00,color:#fff
-    style ENHANCE fill:#FB8C00,color:#fff
-    style SCRIPT fill:#1565C0,color:#fff
-    style SCHED fill:#43A047,color:#fff
-    style STORAGE fill:#43A047,color:#fff
-    style WORKFLOW fill:#8E24AA,color:#fff
 ```
 
 ```
@@ -300,8 +290,6 @@ flowchart LR
     E -->|재실행| F["수정 스크립트로 재실행"]
     E -->|적용| G["원본 스크립트에 적용"]
 
-    style A fill:#e53935,color:#fff
-    style D fill:#43A047,color:#fff
 ```
 
 ### 6.3 상태 전이
@@ -317,11 +305,6 @@ flowchart LR
     COMPLETED -->|재스케줄| IDLE
     FAILED -->|재스케줄| IDLE
 
-    style IDLE fill:#9E9E9E,color:#fff
-    style PENDING fill:#FB8C00,color:#fff
-    style RUNNING fill:#1565C0,color:#fff
-    style COMPLETED fill:#43A047,color:#fff
-    style FAILED fill:#e53935,color:#fff
 ```
 
 **Session 상태:**
@@ -332,10 +315,6 @@ flowchart LR
     SR -->|성공| SC["🟢 COMPLETED"]
     SR -->|실패| SF["🔴 FAILED"]
 
-    style SP fill:#FB8C00,color:#fff
-    style SR fill:#1565C0,color:#fff
-    style SC fill:#43A047,color:#fff
-    style SF fill:#e53935,color:#fff
 ```
 
 ### 6.4 후처리 API (Incross i-flow)

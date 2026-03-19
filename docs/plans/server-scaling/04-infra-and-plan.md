@@ -40,9 +40,6 @@ graph TD
     MASTER <-->|2049| EFS
     WORKER <-->|2049| EFS
 
-    style PUB fill:#1565C0,color:#fff
-    style PRIV fill:#4E342E,color:#fff
-    style EFS fill:#43A047,color:#fff
 ```
 
 ---

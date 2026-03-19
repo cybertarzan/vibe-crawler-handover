@@ -20,9 +20,6 @@ graph TD
     MA["Master A<br/>API+스케줄러+크롤러"] --> DB[("PostgreSQL<br/>+ EFS/NFS")]
     MB["Master B<br/>API+스케줄러+크롤러"] --> DB
 
-    style MA fill:#e53935,color:#fff
-    style MB fill:#e53935,color:#fff
-    style DB fill:#43A047,color:#fff
 ```
 
 | | 내용 |

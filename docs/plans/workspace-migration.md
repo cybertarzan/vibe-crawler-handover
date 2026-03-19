@@ -124,10 +124,6 @@ flowchart LR
     D --> E["4. 검증"]
     E --> F["5. 완료 처리"]
 
-    style A fill:#FB8C00,color:#fff
-    style C fill:#4051B5,color:#fff
-    style D fill:#4051B5,color:#fff
-    style F fill:#43A047,color:#fff
 ```
 
 | 단계 | 작업 | 비고 |
@@ -213,8 +209,6 @@ flowchart TD
     D --> E
     E --> F["백엔드가 구 경로에<br/>scripts/ 자동 재생성"]
 
-    style B fill:#e53935,color:#fff
-    style E fill:#b71c1c,color:#fff
 ```
 
 이관 작업에서 `projects` 테이블만 업데이트하고, **`jobs.script_path`는 업데이트하지 않음**.

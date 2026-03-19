@@ -24,8 +24,6 @@ flowchart TD
     D --> E["kill 조건: PID NULL이면 스킵"]
     E --> F["좀비 프로세스 방치 💀"]
 
-    style A fill:#e53935,color:#fff
-    style F fill:#b71c1c,color:#fff
 ```
 
 1. **PID 콜백 DB 세션 문제**: `_pid_callback`이 외부 `session_repo`의 DB 세션을 공유하여 커밋이 안 됨 → `process_identifier = NULL`

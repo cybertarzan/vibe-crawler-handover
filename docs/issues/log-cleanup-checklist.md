@@ -15,8 +15,6 @@ flowchart LR
     C -->|10일 초과| D["rm -rf 삭제"]
     C -->|10일 이내| E["유지"]
 
-    style D fill:#e53935,color:#fff
-    style E fill:#43A047,color:#fff
 ```
 
 `get_old_session_directories()`에서 경로 불일치 버그를 수정함 (`base_path/RESULTS_DIR` → `results_base_path`).

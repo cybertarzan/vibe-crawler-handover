@@ -155,10 +155,6 @@ flowchart TD
     E --> G["4. Worker API 호출<br/>(HTTP)"]
     G --> H["Worker가 Docker<br/>컨테이너 실행"]
 
-    style A fill:#4051B5,color:#fff
-    style D fill:#FB8C00,color:#fff
-    style H fill:#43A047,color:#fff
-    style F fill:#9E9E9E,color:#fff
 ```
 
 ## 중복 방지 계층
