@@ -1530,6 +1530,36 @@
         int max_concurrent_jobs
         int log_retention_days
         boolean auto_cleanup
+    }
+
+    job_script_histories {
+        string id PK
+        string job_id FK
+        int version
+        string file_path
+        string change_type
+        string description
+        datetime created_at
+    }
+
+    post_crawling_api_results {
+        string id PK
+        string crawling_session_id FK
+        string stage
+        string status
+        json request_payload
+        json response_payload
+        datetime created_at
+    }
+
+    ai_auto_fix_analyses {
+        string id PK
+        string ai_auto_fix_session_id FK
+        int attempt_number
+        string analysis_result
+        string suggested_fix
+        string status
+        datetime created_at
     }</code></pre>
 <h3 id="42">4.2 주요 테이블</h3>
 <table>
@@ -1557,12 +1587,24 @@
 <td>Job 실행 이력. PENDING → RUNNING → COMPLETED/FAILED</td>
 </tr>
 <tr>
+<td><code>job_script_histories</code></td>
+<td>스크립트 변경 이력. 버전 관리, 변경 사유 기록</td>
+</tr>
+<tr>
 <td><code>ai_auto_fix_sessions</code></td>
 <td>크롤링 실패 시 AI 자동 수정 세션</td>
 </tr>
 <tr>
+<td><code>ai_auto_fix_analyses</code></td>
+<td>AI 분석 시도별 결과. 수정안, 분석 결과 저장</td>
+</tr>
+<tr>
 <td><code>post_crawling_api_results</code></td>
 <td>1차(analyze)/2차(upload) API 호출 결과</td>
+</tr>
+<tr>
+<td><code>system_settings</code></td>
+<td>시스템 전역 설정 (동시 실행 수, 보관 기간 등)</td>
 </tr>
 <tr>
 <td><code>options</code></td>
@@ -1659,29 +1701,30 @@
     style A fill:#e53935,color:#fff
     style D fill:#43A047,color:#fff</code></pre>
 <h3 id="63">6.3 상태 전이</h3>
-<pre class="mermaid"><code>stateDiagram-v2
-    [*] --&gt; IDLE : Job 생성
+<p><strong>Job 상태:</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    IDLE["⬜ IDLE"] --&gt;|스케줄 트리거| PENDING["🟡 PENDING"]
+    PENDING --&gt;|세션 픽업| RUNNING["🔵 RUNNING"]
+    RUNNING --&gt;|성공| COMPLETED["🟢 COMPLETED"]
+    RUNNING --&gt;|실패| FAILED["🔴 FAILED"]
+    COMPLETED --&gt;|재스케줄| IDLE
+    FAILED --&gt;|재스케줄| IDLE
 
-    state Job {
-        IDLE --&gt; PENDING : 스케줄 트리거
-        PENDING --&gt; RUNNING : 세션 픽업
-        RUNNING --&gt; COMPLETED : 성공
-        RUNNING --&gt; FAILED : 실패
-        COMPLETED --&gt; IDLE : 재스케줄
-        FAILED --&gt; IDLE : 재스케줄
-    }
+    style IDLE fill:#9E9E9E,color:#fff
+    style PENDING fill:#FB8C00,color:#fff
+    style RUNNING fill:#1565C0,color:#fff
+    style COMPLETED fill:#43A047,color:#fff
+    style FAILED fill:#e53935,color:#fff</code></pre>
+<p><strong>Session 상태:</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    SP["🟡 PENDING"] --&gt;|실행 시작| SR["🔵 RUNNING"]
+    SR --&gt;|성공| SC["🟢 COMPLETED"]
+    SR --&gt;|실패| SF["🔴 FAILED"]
 
-    state Session {
-        state "PENDING" as SP
-        state "RUNNING" as SR
-        state "COMPLETED" as SC
-        state "FAILED" as SF
-
-        [*] --&gt; SP
-        SP --&gt; SR : 실행 시작
-        SR --&gt; SC : 성공
-        SR --&gt; SF : 실패
-    }</code></pre>
+    style SP fill:#FB8C00,color:#fff
+    style SR fill:#1565C0,color:#fff
+    style SC fill:#43A047,color:#fff
+    style SF fill:#e53935,color:#fff</code></pre>
 <h3 id="64-api-incross-i-flow">6.4 후처리 API (Incross i-flow)</h3>
 <table>
 <thead>

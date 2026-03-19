@@ -39,7 +39,12 @@ nav:
     - 운영 가이드: frontend/03-operations-guide.md
     - 이슈 및 히스토리: frontend/04-issues-and-history.md
   - 계획서:
-    - 크롤링 서버 증량: plans/server-scaling.md
+    - 크롤링 서버 증량:
+      - 개요: plans/server-scaling/index.md
+      - 방안 A - Scale-Up: plans/server-scaling/01-scale-up.md
+      - 방안 B - Worker 분리 (권장): plans/server-scaling/02-worker-separation.md
+      - 방안 C - 멀티 Master: plans/server-scaling/03-multi-master.md
+      - AWS 인프라 및 실행 계획: plans/server-scaling/04-infra-and-plan.md
     - 워크스페이스 이관 (MINDK→INCRO): plans/workspace-migration.md
   - 이슈:
     - BUG-002 PID 저장실패 / 좀비세션: issues/bug-002-pid-zombie.md

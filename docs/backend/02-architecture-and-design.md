@@ -45,6 +45,24 @@ graph TD
 └── domain/ports/out_/            → Output Port (Repository/External 인터페이스)
 ```
 
+!!! tip "아키텍처 패턴 유지: 유닛테스트로 검증"
+    이 헥사고날 아키텍처는 **자동화된 유닛테스트**로 지속적으로 검증됩니다.
+    
+    `tests/arch_util.py`의 `ArchitectureChecker`가 5개 도메인 전체에 대해 다음을 검사합니다:
+    
+    - ✅ **폴더 구조**: 각 도메인의 `adapter/`, `application/`, `domain/` 디렉토리 존재 여부
+    - ✅ **Port/Adapter 상속**: ABC(추상 클래스) 기반 인터페이스 준수 여부
+    - ✅ **네이밍 컨벤션**: `*_port.py`, `*_adapter.py`, `*_service.py` 등 일관된 명명
+    - ✅ **Borg 싱글턴**: Adapter/Service의 `__dict__` 공유 패턴 적용 여부
+    - ✅ **DI 패턴**: `Depends()` 기반 의존성 주입 검증
+    
+    ```bash
+    # 아키텍처 검증 테스트 실행
+    python -m pytest tests/ -k "architecture" -v
+    ```
+    
+    새로운 도메인을 추가하거나 기존 도메인을 수정할 때, 이 테스트가 **아키텍처 규칙 위반을 즉시 감지**합니다.
+
 ---
 
 ## 2. 도메인 구조

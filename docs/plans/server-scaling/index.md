@@ -1,0 +1,64 @@
+# 크롤링 서버 증량 계획서
+
+> 작성일: 2026-03-18 KST  
+> 대상: 운영(Prod) 환경  
+> 목적: 크롤링 처리 용량 확장 및 배치 선점 문제 해결
+
+---
+
+## 현재 아키텍처 (단일 EC2)
+
+```mermaid
+graph TD
+    subgraph EC2["EC2 인스턴스 (96GB 디스크)"]
+        BE["vibe-backend<br/>(API+스케줄러)<br/>Port 8080"]
+        FE["vibe-frontend<br/>(Nginx+Vue)<br/>Port 80/443"]
+        BE -->|docker.sock| CRAWL["crawler-{session_id}<br/>컨테이너들<br/>(Playwright, 세션별 1개)"]
+        PG["PostgreSQL<br/>Port 5432"]
+        SS["system_storage<br/>(공유 볼륨)"]
+    end
+
+    style BE fill:#4051B5,color:#fff
+    style CRAWL fill:#e53935,color:#fff
+    style PG fill:#43A047,color:#fff
+```
+
+### 현재 배치 동작 방식
+
+| 구성 요소 | 현재 방식 | 문제점 |
+|---|---|---|
+| **스케줄러** | APScheduler (인메모리, 단일 프로세스) | 서버 2대 이상이면 **중복 실행** 발생 |
+| **PENDING 세션 픽업** | 15초 간격 폴링 → `localhost:6767` API 호출 | 자기 자신만 호출 가능, **타 서버로 분배 불가** |
+| **동시 실행 제한** | `max_concurrent_jobs` (DB 기반 카운트) | DB 레벨 카운트는 공유 가능하나, **슬롯 선점 경합** 있음 |
+| **Job 락** | `acquire_lock()` — SQL UPDATE WHERE status≠RUNNING | **DB 레벨 Atomic**이므로 멀티서버에서도 안전 ✅ |
+| **크롤러 실행** | Docker 형제 컨테이너 (`docker.sock` 마운트) | 해당 호스트의 Docker만 제어 가능 |
+| **스토리지** | `/app/system_storage` (호스트 디렉토리 마운트) | **각 서버 로컬 디스크에 저장**, 서버 간 공유 안 됨 |
+
+### 현재 병목 지점
+
+| 병목 | 현재 수치 | 영향 |
+|---|---|---|
+| 동시 크롤링 수 | `max_concurrent_jobs = 3` | 프로젝트 20+개 시 대기 시간 증가 |
+| 디스크 | 96GB (일당 4~16GB 소모) | 보관 기간 10일 이상 불가 |
+| CPU/메모리 | Playwright + Chromium 세션당 1~2GB RAM | 동시 3개 = 최소 6GB RAM 필요 |
+
+---
+
+## 방안 비교
+
+| 방안 | 방식 | 코드 변경 | 확장성 | 권장 |
+|---|---|---|---|---|
+| [**A: Scale-Up**](01-scale-up.md) | 인스턴스/디스크 증량 | 없음 | 제한적 | Phase 1 즉시 적용 |
+| [**B: Worker 분리**](02-worker-separation.md) | Master/Worker 역할 분리 | 필요 | ✅ 수평 확장 | **⭐ 권장** |
+| [**C: 멀티 Master**](03-multi-master.md) | Active-Active 구조 | 큼 | ✅✅ | 장기 옵션 |
+
+!!! success "권장: 방안 B (Worker 분리)"
+    사장(스케줄러)이 1명이므로 배치 선점 문제가 **원천 차단**됩니다.  
+    Phase 1(Scale-Up)을 즉시 적용하고, Phase 2~5로 방안 B를 순차 구현하는 전략을 권장합니다.
+
+### 세부 문서
+
+- [방안 A: Scale-Up](01-scale-up.md) — 즉시 적용 가능한 스케일업
+- [방안 B: Worker 분리](02-worker-separation.md) — 권장 아키텍처 상세 설계
+- [방안 C: 멀티 Master](03-multi-master.md) — Active-Active + 배치 선점 문제
+- [AWS 인프라 및 실행 계획](04-infra-and-plan.md) — 리소스, 네트워크, 단계별 계획
