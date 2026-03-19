@@ -49,9 +49,6 @@ graph LR
     API -->|HTTP| WA
     DB2 -->|TCP| PG
     EFS2 <-->|NFS| EFS1
-
-    style Master fill:#1a237e,color:#fff
-    style Worker fill:#b71c1c,color:#fff
 ```
 
 | | 내용 |
