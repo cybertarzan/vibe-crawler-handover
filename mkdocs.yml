@@ -31,7 +31,13 @@ nav:
   - Backend:
     - 프로젝트 개요: backend/01-project-overview.md
     - 아키텍처 및 설계: backend/02-architecture-and-design.md
-    - 운영 가이드: backend/03-operations-guide.md
+    - 운영 가이드:
+      - 개요: backend/operations/index.md
+      - 빌드 및 배포: backend/operations/01-build-deploy.md
+      - 모니터링 및 로그: backend/operations/02-monitoring-logs.md
+      - 외부 서비스 연동: backend/operations/03-external-services.md
+      - DB 관리: backend/operations/04-db-management.md
+      - 스토리지 용량 계획: backend/operations/05-storage-planning.md
     - 이슈 및 히스토리: backend/04-issues-and-history.md
   - Frontend:
     - 프로젝트 개요: frontend/01-project-overview.md
