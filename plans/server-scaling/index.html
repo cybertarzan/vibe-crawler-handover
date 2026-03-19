@@ -16,7 +16,7 @@
         <link rel="prev" href="../../frontend/04-issues-and-history/">
       
       
-        <link rel="next" href="../workspace-migration/">
+        <link rel="next" href="01-scale-up/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>크롤링 서버 증량 - Vibe Crawling Platform - 인수인계 문서</title>
+        <title>개요 - Vibe Crawling Platform - 인수인계 문서</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              크롤링 서버 증량
+              개요
             
           </span>
         </div>
@@ -688,6 +688,57 @@
   
   
   
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    크롤링 서버 증량
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    크롤링 서버 증량
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -703,7 +754,7 @@
   <span class="md-ellipsis">
     
   
-    크롤링 서버 증량
+    개요
   
 
     
@@ -721,7 +772,7 @@
   <span class="md-ellipsis">
     
   
-    크롤링 서버 증량
+    개요
   
 
     
@@ -747,22 +798,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#ec2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 현재 아키텍처 분석
+        현재 아키텍처 (단일 EC2)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 현재 아키텍처 분석">
+    <nav class="md-nav" aria-label="현재 아키텍처 (단일 EC2)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-ec2" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 서버 구성 (단일 EC2)
+        현재 배치 동작 방식
       
     </span>
   </a>
@@ -770,21 +821,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 현재 배치(스케줄러) 동작 방식
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 현재 병목 지점
+        현재 병목 지점
       
     </span>
   </a>
@@ -797,44 +837,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 증량 방안 비교
+        방안 비교
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 증량 방안 비교">
+    <nav class="md-nav" aria-label="방안 비교">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-scale-up" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        방안 A: 단일 서버 스케일업 (Scale-Up)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-worker-scale-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        방안 B: Worker 서버 분리 — Scale-Out (권장)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-master-active-active-scale-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        방안 C: 멀티 Master (Active-Active) — Scale-Out
+        세부 문서
       
     </span>
   </a>
@@ -843,367 +861,132 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 배치 선점 문제 상세 분석
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 배치 선점 문제 상세 분석">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 문제 정의
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 현재 방어선과 한계
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-race-condition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 핵심 문제: 세션 선점 경쟁 (Race Condition)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-atomic-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4 해결 방법: "먼저 손 든 사람이 가져감" (Atomic UPDATE)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-b-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 권장 증량 방안: 방안 B (Worker 분리)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 권장 증량 방안: 방안 B (Worker 분리)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 아키텍처
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 필요한 인프라 변경
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 코드 변경 사항
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.3 코드 변경 사항">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 1: 세션 선점 락 추가 (배치 선점 해결)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-crawlingexecutoradapter-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 2: CrawlingExecutorAdapter — Worker 라우팅
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-worker-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 3: Worker Agent 서비스 (신규)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 4: Docker Compose 분리
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 배치 선점 해결 상세 설계
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 배치 선점 해결 상세 설계">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.1 세션 실행 흐름 (변경 후)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.2 중복 방지 계층
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.3 Worker 장애 대응
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. AWS 인프라 구성
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. AWS 인프라 구성">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.1 리소스 목록
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.2 디스크 용량 해결
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.3 네트워크 구성
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. 단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 빠른 효과를 위한 우선 적용 (Phase 1만)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 리스크 및 고려사항
-      
-    </span>
-  </a>
   
 </li>
       
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-scale-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 A - Scale-Up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02-worker-separation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 B - Worker 분리 (권장)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-multi-master/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 C - 멀티 Master
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04-infra-and-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS 인프라 및 실행 계획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1445,22 +1228,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#ec2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 현재 아키텍처 분석
+        현재 아키텍처 (단일 EC2)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 현재 아키텍처 분석">
+    <nav class="md-nav" aria-label="현재 아키텍처 (단일 EC2)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-ec2" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 서버 구성 (단일 EC2)
+        현재 배치 동작 방식
       
     </span>
   </a>
@@ -1468,21 +1251,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 현재 배치(스케줄러) 동작 방식
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 현재 병목 지점
+        현재 병목 지점
       
     </span>
   </a>
@@ -1495,44 +1267,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 증량 방안 비교
+        방안 비교
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 증량 방안 비교">
+    <nav class="md-nav" aria-label="방안 비교">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-scale-up" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        방안 A: 단일 서버 스케일업 (Scale-Up)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-worker-scale-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        방안 B: Worker 서버 분리 — Scale-Out (권장)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-master-active-active-scale-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        방안 C: 멀티 Master (Active-Active) — Scale-Out
+        세부 문서
       
     </span>
   </a>
@@ -1541,361 +1291,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 배치 선점 문제 상세 분석
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 배치 선점 문제 상세 분석">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 문제 정의
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 현재 방어선과 한계
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-race-condition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 핵심 문제: 세션 선점 경쟁 (Race Condition)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-atomic-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4 해결 방법: "먼저 손 든 사람이 가져감" (Atomic UPDATE)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-b-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 권장 증량 방안: 방안 B (Worker 분리)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 권장 증량 방안: 방안 B (Worker 분리)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 아키텍처
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 필요한 인프라 변경
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 코드 변경 사항
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.3 코드 변경 사항">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 1: 세션 선점 락 추가 (배치 선점 해결)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-crawlingexecutoradapter-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 2: CrawlingExecutorAdapter — Worker 라우팅
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-worker-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 3: Worker Agent 서비스 (신규)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        변경 4: Docker Compose 분리
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 배치 선점 해결 상세 설계
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 배치 선점 해결 상세 설계">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.1 세션 실행 흐름 (변경 후)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.2 중복 방지 계층
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.3 Worker 장애 대응
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. AWS 인프라 구성
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. AWS 인프라 구성">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.1 리소스 목록
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.2 디스크 용량 해결
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.3 네트워크 구성
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. 단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 빠른 효과를 위한 우선 적용 (Phase 1만)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 리스크 및 고려사항
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1926,8 +1321,7 @@
 목적: 크롤링 처리 용량 확장 및 배치 선점 문제 해결</p>
 </blockquote>
 <hr />
-<h2 id="1">1. 현재 아키텍처 분석</h2>
-<h3 id="11-ec2">1.1 서버 구성 (단일 EC2)</h3>
+<h2 id="ec2">현재 아키텍처 (단일 EC2)</h2>
 <pre class="mermaid"><code>graph TD
     subgraph EC2["EC2 인스턴스 (96GB 디스크)"]
         BE["vibe-backend&lt;br/&gt;(API+스케줄러)&lt;br/&gt;Port 8080"]
@@ -1940,7 +1334,7 @@
     style BE fill:#4051B5,color:#fff
     style CRAWL fill:#e53935,color:#fff
     style PG fill:#43A047,color:#fff</code></pre>
-<h3 id="12">1.2 현재 배치(스케줄러) 동작 방식</h3>
+<h3 id="_2">현재 배치 동작 방식</h3>
 <table>
 <thead>
 <tr>
@@ -1982,7 +1376,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="13">1.3 현재 병목 지점</h3>
+<h3 id="_3">현재 병목 지점</h3>
 <table>
 <thead>
 <tr>
@@ -2010,569 +1404,53 @@
 </tbody>
 </table>
 <hr />
-<h2 id="2">2. 증량 방안 비교</h2>
-<h3 id="a-scale-up">방안 A: 단일 서버 스케일업 (Scale-Up)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>기존 EC2 → 더 큰 인스턴스 + 더 큰 디스크
-</code></pre></div>
+<h2 id="_4">방안 비교</h2>
 <table>
 <thead>
 <tr>
-<th>항목</th>
-<th>변경</th>
+<th>방안</th>
+<th>방식</th>
+<th>코드 변경</th>
+<th>확장성</th>
+<th>권장</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>인스턴스</td>
-<td>t3.medium → t3.xlarge (4vCPU, 16GB RAM)</td>
+<td><a href="01-scale-up/"><strong>A: Scale-Up</strong></a></td>
+<td>인스턴스/디스크 증량</td>
+<td>없음</td>
+<td>제한적</td>
+<td>Phase 1 즉시 적용</td>
 </tr>
 <tr>
-<td>디스크</td>
-<td>96GB → 200GB+ EBS</td>
+<td><a href="02-worker-separation/"><strong>B: Worker 분리</strong></a></td>
+<td>Master/Worker 역할 분리</td>
+<td>필요</td>
+<td>✅ 수평 확장</td>
+<td><strong>⭐ 권장</strong></td>
 </tr>
 <tr>
-<td><code>max_concurrent_jobs</code></td>
-<td>3 → 5~8</td>
-</tr>
-<tr>
-<td>코드 변경</td>
-<td><strong>없음</strong></td>
+<td><a href="03-multi-master/"><strong>C: 멀티 Master</strong></a></td>
+<td>Active-Active 구조</td>
+<td>큼</td>
+<td>✅✅</td>
+<td>장기 옵션</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition success">
+<p class="admonition-title">권장: 방안 B (Worker 분리)</p>
+<p>사장(스케줄러)이 1명이므로 배치 선점 문제가 <strong>원천 차단</strong>됩니다.<br />
+Phase 1(Scale-Up)을 즉시 적용하고, Phase 2~5로 방안 B를 순차 구현하는 전략을 권장합니다.</p>
+</div>
+<h3 id="_5">세부 문서</h3>
 <ul>
-<li><strong>장점</strong>: 코드 수정 0, 즉시 적용 가능</li>
-<li><strong>단점</strong>: 수직 확장 한계, 단일 장애점(SPOF) 해결 안 됨</li>
+<li><a href="01-scale-up/">방안 A: Scale-Up</a> — 즉시 적용 가능한 스케일업</li>
+<li><a href="02-worker-separation/">방안 B: Worker 분리</a> — 권장 아키텍처 상세 설계</li>
+<li><a href="03-multi-master/">방안 C: 멀티 Master</a> — Active-Active + 배치 선점 문제</li>
+<li><a href="04-infra-and-plan/">AWS 인프라 및 실행 계획</a> — 리소스, 네트워크, 단계별 계획</li>
 </ul>
-<h3 id="b-worker-scale-out">방안 B: Worker 서버 분리 — Scale-Out (권장)</h3>
-<p>현재는 <strong>"사장 + 직원"이 한 사무실에서 모든 일을 같이 하는</strong> 구조입니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[현재: 1대가 다 함]
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>사장(스케줄러): &quot;5시에 크롤링 해야지!&quot; → 직접 크롤러도 실행
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                                     → 직접 API 응답도 처리
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                                     → 직접 DB 관리도 수행
-</code></pre></div>
-<p><strong>방안 B</strong>는 "사장"과 "직원"의 역할을 분리하는 것입니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[방안 B: 역할 분리]
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Master 서버(사장): &quot;5시다! → Worker야 이거 해!&quot;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ↓ HTTP 호출
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Worker 서버(직원): &quot;네! 크롤러 돌리겠습니다&quot; → Docker 컨테이너 실행
-</code></pre></div>
-<ul>
-<li><strong>Master(사장)</strong>: 스케줄 관리 + API 응답만 담당 (크롤러 직접 안 돌림)</li>
-<li><strong>Worker(직원)</strong>: 크롤러만 전담 실행 (스케줄러 없음)</li>
-<li>Worker를 <strong>여러 대 추가</strong>하면 → 직원이 늘어나면 → 동시에 더 많은 크롤링 가능</li>
-<li><strong>사장이 1명</strong>이므로 → 배치 선점 문제가 <strong>발생하지 않음</strong> ✅</li>
-</ul>
-<p>아키텍처 다이어그램:</p>
-<pre class="mermaid"><code>graph LR
-    subgraph Master["Master 서버 (API + 스케줄러)"]
-        API["Backend API&lt;br/&gt;+ APScheduler"]
-        PG[PostgreSQL]
-        EFS1["EFS/NFS"]
-    end
-
-    subgraph Worker["Worker 서버 (N대, 크롤러 전용)"]
-        WA["Worker Agent&lt;br/&gt;(크롤러 실행)"]
-        DB2["DB 접근 (직접)"]
-        EFS2["공유 스토리지"]
-    end
-
-    API --&gt;|HTTP| WA
-    DB2 --&gt;|TCP| PG
-    EFS2 &lt;--&gt;|NFS| EFS1
-
-    style Master fill:#1a237e,color:#fff
-    style Worker fill:#b71c1c,color:#fff</code></pre>
-<ul>
-<li><strong>장점</strong>: 수평 확장 가능, Master 장애 시에도 실행 중인 크롤링은 계속</li>
-<li><strong>단점</strong>: 코드 변경 필요, 공유 스토리지 비용</li>
-</ul>
-<h3 id="c-master-active-active-scale-out">방안 C: 멀티 Master (Active-Active) — Scale-Out</h3>
-<p>방안 B와 달리 <strong>두 서버가 둘 다 "사장" 역할</strong>을 합니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[방안 C: 둘 다 사장]
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>서버A(사장): &quot;5시다! 크롤링 하자!&quot;  ──┐
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                                    ├── 같은 일을 동시에 하려고 함!
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>서버B(사장): &quot;5시다! 크롤링 하자!&quot;  ──┘
-</code></pre></div>
-<p>사장이 2명이니까 둘 다 같은 PENDING 세션을 <strong>동시에 가져가려는 경쟁</strong>이 발생합니다.
-이게 바로 <strong>배치 선점 문제</strong>이며, 반드시 해결해야 방안 C를 사용할 수 있습니다.</p>
-<pre class="mermaid"><code>graph TD
-    MA["Master A&lt;br/&gt;API+스케줄러+크롤러"] --&gt; DB[("PostgreSQL&lt;br/&gt;+ EFS/NFS")]
-    MB["Master B&lt;br/&gt;API+스케줄러+크롤러"] --&gt; DB
-
-    style MA fill:#e53935,color:#fff
-    style MB fill:#e53935,color:#fff
-    style DB fill:#43A047,color:#fff</code></pre>
-<ul>
-<li><strong>장점</strong>: 고가용성(HA), 부하 분산</li>
-<li><strong>단점</strong>: 배치 선점 문제 해결이 <strong>필수</strong>, 코드 변경 범위 큼</li>
-</ul>
-<hr />
-<h2 id="3">3. 배치 선점 문제 상세 분석</h2>
-<h3 id="31">3.1 문제 정의</h3>
-<p><strong>배치 선점 문제란?</strong><br />
-서버가 2대 이상일 때, 각 서버가 "내가 이 일을 하겠다!"고 <strong>동시에 손을 들어서</strong> 같은 작업을 중복 실행하는 문제입니다.</p>
-<p>쉬운 비유로 설명하면:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[1대일 때 — 문제 없음]
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>사장 1명: &quot;대기열에 3건 있네? 1번부터 순서대로 처리하자&quot;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>→ 경쟁자가 없으니 중복 실행 불가능
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>[2대일 때 — 문제 발생!]
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>사장A: &quot;대기열에 3건 있네! 1번 내가 한다!&quot; ──┐
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                                           ├── 1번을 둘 다 처리해버림!
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>사장B: &quot;대기열에 3건 있네! 1번 내가 한다!&quot; ──┘
-</code></pre></div>
-<p>현재 APScheduler는 각 서버에서 <strong>독립적으로</strong> 15초마다 PENDING 세션을 조회하므로:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[서버A] 15초마다: PENDING 세션 조회 → 3개 발견 → 3개 다 실행 시도
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[서버B] 15초마다: PENDING 세션 조회 → 3개 발견 → 3개 다 실행 시도
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                                            ↓
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                                     동일 세션 중복 실행!
-</code></pre></div>
-<h3 id="32">3.2 현재 방어선과 한계</h3>
-<table>
-<thead>
-<tr>
-<th>방어선</th>
-<th>위치</th>
-<th>효과</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>acquire_lock()</code></td>
-<td><code>job_repository_adapter.py:346</code></td>
-<td>Job 레벨에서 Atomic UPDATE → <strong>같은 Job의 중복 실행은 방지됨</strong> ✅</td>
-</tr>
-<tr>
-<td><code>Job당 1개 세션 제한</code></td>
-<td><code>check_and_execute_pending_sessions_service.py:66-73</code></td>
-<td>RUNNING 세션 있으면 스킵 → <strong>같은 Job 내 세션 중복은 방지</strong> ✅</td>
-</tr>
-<tr>
-<td><code>max_concurrent 카운트</code></td>
-<td>DB <code>count_running_jobs()</code></td>
-<td>전체 시스템 동시 실행 제한 → <strong>DB 공유 시 유효</strong> ✅</td>
-</tr>
-<tr>
-<td><strong>PENDING→RUNNING 세션 전이</strong></td>
-<td>API를 통해 처리</td>
-<td><strong>localhost 호출이라 자기 서버에서만 실행</strong> ❌</td>
-</tr>
-</tbody>
-</table>
-<h3 id="33-race-condition">3.3 핵심 문제: 세션 선점 경쟁 (Race Condition)</h3>
-<p>현재 코드에서 문제가 발생하는 정확한 지점:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># check_and_execute_pending_sessions_service.py 현재 로직</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># ① 15초마다 실행 — 서버A, B 모두 같은 PENDING 목록을 봄</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">pending_sessions</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session_repo</span><span class="o">.</span><span class="n">find_pending_sessions_oldest_per_job</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="n">available_slots</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># ② for문으로 하나씩 실행 — 서버A가 세션-1을 잡으려는 순간 B도 잡으려 함</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">for</span> <span class="n">session</span> <span class="ow">in</span> <span class="n">pending_sessions</span><span class="p">:</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">await</span> <span class="n">crawling_executor</span><span class="o">.</span><span class="n">execute_crawling</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span> <span class="n">pending_session_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># ③ 결과: 같은 세션인데 크롤러 컨테이너가 2개 뜸! 💥</span>
-</code></pre></div>
-<p><code>acquire_lock()</code>이 Job 레벨에서 방어하지만, <strong>같은 세션이 두 서버에서 중복으로 크롤러 컨테이너를 띄우는 순간이 존재</strong>합니다.</p>
-<h3 id="34-atomic-update">3.4 해결 방법: "먼저 손 든 사람이 가져감" (Atomic UPDATE)</h3>
-<p>DB의 Atomic UPDATE를 사용하면 <strong>동시에 손을 들어도 딱 1명만 성공</strong>합니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">-- 서버A가 먼저 이 쿼리를 실행하면:</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">sessions</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;RUNNING&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="o">=</span><span class="s1">&#39;서버A&#39;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;세션-1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;PENDING&#39;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">-- → rowcount=1 (성공! 세션-1은 서버A가 선점)</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">-- 서버B가 직후에 동일한 쿼리를 실행하면:</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">sessions</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;RUNNING&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="o">=</span><span class="s1">&#39;서버B&#39;</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;세션-1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;PENDING&#39;</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">-- → rowcount=0 (이미 RUNNING이라 WHERE 조건 불일치 → 실패, 건너뜀)</span>
-</code></pre></div>
-<p>이 패턴은 이미 프로젝트에서 <code>acquire_lock()</code>(Job 레벨)으로 사용 중이며,
-이것을 <strong>세션 레벨에도 동일하게 적용</strong>하는 것이 <code>acquire_session_lock()</code> 입니다.</p>
-<hr />
-<h2 id="4-b-worker">4. 권장 증량 방안: 방안 B (Worker 분리)</h2>
-<h3 id="41">4.1 아키텍처</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>┌──────────────────────────────────────────────────────┐
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>│  Master EC2 (기존 서버)                                │
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│                                                       │
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│  ┌─────────────────┐  ┌──────────┐  ┌──────────────┐ │
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>│  │ Backend API     │  │ Frontend │  │ PostgreSQL   │ │
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>│  │ + APScheduler   │  │          │  │              │ │
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>│  │ (스케줄러 전담)   │  │          │  │              │ │
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>│  └────────┬────────┘  └──────────┘  └──────┬───────┘ │
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>│           │                                │         │
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>│           │ ①PENDING 세션 생성              │         │
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>│           │ ②Worker에 실행 요청             │         │
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>│           ▼                                │         │
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>│  ┌─────────────────┐                       │         │
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>│  │ EFS Mount       │◄─────────────────────┐│         │
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>│  │ /system_storage │                      ││         │
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>│  └─────────────────┘                      ││         │
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>└───────────────────────────────────────────┼┼─────────┘
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>                                            ││
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>            ┌───────────────────────────────┼┼─────────┐
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>            │  Worker EC2-1                 ││         │
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>            │                               ││         │
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>            │  ┌──────────────────┐         ││         │
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>            │  │ Worker Agent     │─────────┘│         │
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>            │  │ (FastAPI Lite)   │          │         │
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>            │  │ Port 6767        │          │         │
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>            │  └────────┬────────┘          │         │
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>            │           │ docker.sock        │         │
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>            │           ▼                    │         │
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>            │  ┌──────────────────┐          │         │
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>            │  │ crawler-{sid}    │          │         │
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>            │  │ 컨테이너들         │          │         │
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>            │  └──────────────────┘          │         │
-<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>            │  ┌──────────────────┐          │         │
-<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>            │  │ EFS Mount        │──────────┘         │
-<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>            │  │ /system_storage  │                    │
-<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>            │  └──────────────────┘                    │
-<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>            └──────────────────────────────────────────┘
-</code></pre></div>
-<h3 id="42">4.2 필요한 인프라 변경</h3>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>현재</th>
-<th>변경 후</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>EC2</strong></td>
-<td>1대 (All-in-One)</td>
-<td>Master 1대 + Worker N대</td>
-</tr>
-<tr>
-<td><strong>스토리지</strong></td>
-<td>호스트 로컬 디스크</td>
-<td><strong>AWS EFS</strong> (NFS 공유 볼륨)</td>
-</tr>
-<tr>
-<td><strong>DB</strong></td>
-<td>Docker Compose 내 PostgreSQL</td>
-<td><strong>AWS RDS PostgreSQL</strong> 또는 기존 유지 (Worker에서 TCP 접속)</td>
-</tr>
-<tr>
-<td><strong>네트워크</strong></td>
-<td>단일 호스트</td>
-<td><strong>VPC 내 Private Subnet</strong> (Master↔Worker 통신)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="43">4.3 코드 변경 사항</h3>
-<h4 id="1_1">변경 1: 세션 선점 락 추가 (배치 선점 해결)</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># crawling_session_repository_adapter.py — 새 메서드 추가</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">acquire_session_lock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="n">UUID</span><span class="p">,</span> <span class="n">worker_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">    PENDING 세션을 Atomic하게 선점 (SELECT FOR UPDATE SKIP LOCKED)</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">stmt</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="n">update</span><span class="p">(</span><span class="n">CrawlingSessionModel</span><span class="p">)</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="o">.</span><span class="n">where</span><span class="p">(</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            <span class="n">and_</span><span class="p">(</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>                <span class="n">CrawlingSessionModel</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">session_id</span><span class="p">),</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>                <span class="n">CrawlingSessionModel</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">CrawlingStatus</span><span class="o">.</span><span class="n">PENDING</span><span class="o">.</span><span class="n">value</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>            <span class="p">)</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="p">)</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="o">.</span><span class="n">values</span><span class="p">(</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>            <span class="n">status</span><span class="o">=</span><span class="n">CrawlingStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            <span class="n">process_identifier</span><span class="o">=</span><span class="n">worker_id</span><span class="p">,</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            <span class="n">updated_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        <span class="p">)</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="p">)</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">&gt;</span> <span class="mi">0</span>
-</code></pre></div>
-<p>핵심 원리: 기존 <code>acquire_lock()</code>과 동일한 <strong>Atomic UPDATE</strong> 패턴을 세션 레벨에 적용합니다.</p>
-<h4 id="2-crawlingexecutoradapter-worker">변경 2: CrawlingExecutorAdapter — Worker 라우팅</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># crawling_executor_adapter.py 수정</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">class</span> <span class="nc">CrawlingExecutorAdapter</span><span class="p">(</span><span class="n">CrawlingExecutorPort</span><span class="p">):</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute_crawling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="n">UUID</span><span class="p">,</span> <span class="n">pending_session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="c1"># 기존: localhost:6767 호출</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="c1"># 변경: Worker 풀에서 가용 Worker 선택 후 호출</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="n">worker_url</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_available_worker</span><span class="p">()</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">worker_url</span><span class="si">}</span><span class="s2">/api/v1/jobs/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span><span class="si">}</span><span class="s2">/execute&quot;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        <span class="o">...</span>
-</code></pre></div>
-<h4 id="3-worker-agent">변경 3: Worker Agent 서비스 (신규)</h4>
-<p>Worker EC2에서 실행되는 경량 FastAPI 서버:
-- 크롤링 실행 API만 제공 (<code>/api/v1/jobs/{id}/execute</code>)
-- 스케줄러 <strong>없음</strong> (Master만 스케줄러 보유)
-- DB 직접 접속 (세션 상태 업데이트)
-- Docker 소켓으로 크롤러 컨테이너 실행</p>
-<h4 id="4-docker-compose">변경 4: Docker Compose 분리</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># docker-compose.master.yml — Master 전용</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="nt">ROLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w">        </span><span class="c1"># 스케줄러 활성화</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">      </span><span class="nt">WORKER_URLS</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;worker1:6767,worker2:6767&quot;</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># docker-compose.worker.yml — Worker 전용</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="nt">worker</span><span class="p">:</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="nt">ROLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">worker</span><span class="w">        </span><span class="c1"># 스케줄러 비활성화</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="nt">DATABASE_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql+asyncpg://...@master-ip:5432/...</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/efs/system_storage:/app/system_storage</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/run/docker.sock:/var/run/docker.sock</span>
-</code></pre></div>
-<hr />
-<h2 id="5">5. 배치 선점 해결 상세 설계</h2>
-<h3 id="51">5.1 세션 실행 흐름 (변경 후)</h3>
-<pre class="mermaid"><code>flowchart TD
-    A["APScheduler&lt;br/&gt;(15초 간격)"] --&gt; B["CheckAndExecute&lt;br/&gt;PendingSessionsService"]
-    B --&gt; C["1. DB에서 PENDING&lt;br/&gt;세션 목록 조회"]
-    C --&gt; D["2. acquire_session_lock()&lt;br/&gt;Atomic UPDATE"]
-    D --&gt;|성공| E["3. Worker 라우팅&lt;br/&gt;(Round-Robin)"]
-    D --&gt;|실패 = 이미선점| F["건너뜀"]
-    E --&gt; G["4. Worker API 호출&lt;br/&gt;(HTTP)"]
-    G --&gt; H["Worker가 Docker&lt;br/&gt;컨테이너 실행"]
-
-    style A fill:#4051B5,color:#fff
-    style D fill:#FB8C00,color:#fff
-    style H fill:#43A047,color:#fff
-    style F fill:#9E9E9E,color:#fff</code></pre>
-<h3 id="52">5.2 중복 방지 계층</h3>
-<table>
-<thead>
-<tr>
-<th>계층</th>
-<th>메커니즘</th>
-<th>방어 대상</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>L1: 세션 선점</strong></td>
-<td><code>acquire_session_lock()</code> Atomic UPDATE</td>
-<td>동일 세션 중복 실행</td>
-</tr>
-<tr>
-<td><strong>L2: Job 락</strong></td>
-<td><code>acquire_lock()</code> (기존)</td>
-<td>동일 Job 중복 실행</td>
-</tr>
-<tr>
-<td><strong>L3: 동시 실행 제한</strong></td>
-<td><code>max_concurrent_jobs</code> DB 카운트</td>
-<td>전체 시스템 과부하</td>
-</tr>
-<tr>
-<td><strong>L4: Job당 1세션</strong></td>
-<td>RUNNING 세션 체크 (기존)</td>
-<td>Job 내 세션 중복</td>
-</tr>
-</tbody>
-</table>
-<h3 id="53-worker">5.3 Worker 장애 대응</h3>
-<table>
-<thead>
-<tr>
-<th>상황</th>
-<th>감지</th>
-<th>처리</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Worker API 응답 없음</td>
-<td>Master HTTP 타임아웃 (10초)</td>
-<td>다른 Worker로 재시도</td>
-</tr>
-<tr>
-<td>Worker 크래시 (세션 실행 중)</td>
-<td><code>sync_job_status_runner</code> (30초)</td>
-<td>DB에서 RUNNING인데 컨테이너 없음 → FAILED</td>
-</tr>
-<tr>
-<td>Worker 디스크 풀</td>
-<td>Worker 헬스체크 실패</td>
-<td>풀에서 제외, EFS이므로 Master에서도 데이터 접근 가능</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="6-aws">6. AWS 인프라 구성</h2>
-<h3 id="61">6.1 리소스 목록</h3>
-<table>
-<thead>
-<tr>
-<th>리소스</th>
-<th>스펙</th>
-<th>용도</th>
-<th>예상 월 비용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Master EC2</strong></td>
-<td>t3.medium (2vCPU, 4GB)</td>
-<td>API + 스케줄러 + DB</td>
-<td>기존 유지</td>
-</tr>
-<tr>
-<td><strong>Worker EC2 × 1</strong></td>
-<td>t3.large (2vCPU, 8GB)</td>
-<td>크롤러 실행 전용</td>
-<td>~$60</td>
-</tr>
-<tr>
-<td><strong>AWS EFS</strong></td>
-<td>General Purpose</td>
-<td>공유 스토리지</td>
-<td>~$30/100GB</td>
-</tr>
-<tr>
-<td><strong>VPC/SG</strong></td>
-<td>Private Subnet</td>
-<td>내부 통신</td>
-<td>무료</td>
-</tr>
-</tbody>
-</table>
-<h3 id="62">6.2 디스크 용량 해결</h3>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>현재</th>
-<th>EFS 전환 후</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>용량 제한</td>
-<td>96GB (EBS 고정)</td>
-<td><strong>무제한</strong> (사용량 기반 과금)</td>
-</tr>
-<tr>
-<td>서버 간 공유</td>
-<td>❌ 불가</td>
-<td>✅ NFS 마운트</td>
-</tr>
-<tr>
-<td>자동 백업</td>
-<td>수동</td>
-<td>EFS Lifecycle 정책</td>
-</tr>
-<tr>
-<td>비용</td>
-<td>EBS $10/100GB</td>
-<td>EFS $30/100GB (IA 클래스: $2.5/100GB)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="63">6.3 네트워크 구성</h3>
-<pre class="mermaid"><code>graph TD
-    subgraph VPC["VPC (10.0.0.0/16)"]
-        subgraph PUB["Public Subnet (10.0.1.0/24)"]
-            MASTER["Master EC2&lt;br/&gt;SG: 80,443,8080(외부)&lt;br/&gt;5432(Private만)"]
-        end
-        subgraph PRIV["Private Subnet (10.0.2.0/24)"]
-            WORKER["Worker EC2-1&lt;br/&gt;SG: 6767(Master만)"]
-        end
-        EFS["EFS Mount Target&lt;br/&gt;SG: 2049(NFS, VPC 내부)"]
-    end
-
-    MASTER &lt;--&gt;|6767| WORKER
-    MASTER &lt;--&gt;|2049| EFS
-    WORKER &lt;--&gt;|2049| EFS
-
-    style PUB fill:#1565C0,color:#fff
-    style PRIV fill:#4E342E,color:#fff
-    style EFS fill:#43A047,color:#fff</code></pre>
-<hr />
-<h2 id="7">7. 단계별 실행 계획</h2>
-<h3 id="phase-1">Phase 1: 준비 (코드 변경 없이 즉시 가능)</h3>
-<ul>
-<li>[ ] Master EC2 인스턴스 스케일업 (t3.medium → t3.large)</li>
-<li>[ ] EBS 디스크 증량 (96GB → 200GB)</li>
-<li>[ ] <code>max_concurrent_jobs</code> 조정 (3 → 5)</li>
-<li>[ ] 소요: 1일, 코드 변경 없음</li>
-</ul>
-<h3 id="phase-2">Phase 2: 공유 스토리지 전환</h3>
-<ul>
-<li>[ ] AWS EFS 생성 + Master에 마운트</li>
-<li>[ ] 기존 system_storage 데이터 EFS로 마이그레이션</li>
-<li>[ ] Docker Compose <code>volumes</code> EFS 경로로 변경</li>
-<li>[ ] 소요: 2~3일</li>
-</ul>
-<h3 id="phase-3">Phase 3: 세션 선점 락 구현</h3>
-<ul>
-<li>[ ] <code>acquire_session_lock()</code> 메서드 구현</li>
-<li>[ ] <code>CheckAndExecutePendingSessionsService</code>에 선점 로직 적용</li>
-<li>[ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)</li>
-<li>[ ] 소요: 2~3일</li>
-</ul>
-<h3 id="phase-4-worker">Phase 4: Worker 서버 배포</h3>
-<ul>
-<li>[ ] Worker EC2 프로비저닝 (Private Subnet)</li>
-<li>[ ] Worker Agent 서비스 구현 (크롤링 실행 API만)</li>
-<li>[ ] <code>CrawlingExecutorAdapter</code> Worker 라우팅 로직</li>
-<li>[ ] Master↔Worker 통신 테스트</li>
-<li>[ ] 소요: 3~5일</li>
-</ul>
-<h3 id="phase-5">Phase 5: 운영 전환 및 검증</h3>
-<ul>
-<li>[ ] 스테이징 환경에서 멀티 서버 통합 테스트</li>
-<li>[ ] 배치 선점 경합 테스트 (동시 다발 PENDING 생성)</li>
-<li>[ ] Worker 장애 시뮬레이션 (kill 후 복구 확인)</li>
-<li>[ ] 운영 환경 롤아웃</li>
-<li>[ ] 소요: 2~3일</li>
-</ul>
-<hr />
-<h2 id="8-phase-1">8. 빠른 효과를 위한 우선 적용 (Phase 1만)</h2>
-<p>Phase 2~5는 개발 기간이 필요하므로, <strong>즉시 효과</strong>가 필요하면 Phase 1만 먼저 적용합니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># EC2 인스턴스 타입 변경 (다운타임 5분)</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>aws<span class="w"> </span>ec2<span class="w"> </span>stop-instances<span class="w"> </span>--instance-ids<span class="w"> </span>i-xxxxx
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>aws<span class="w"> </span>ec2<span class="w"> </span>modify-instance-attribute<span class="w"> </span>--instance-id<span class="w"> </span>i-xxxxx<span class="w"> </span>--instance-type<span class="w"> </span>t3.xlarge
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>aws<span class="w"> </span>ec2<span class="w"> </span>start-instances<span class="w"> </span>--instance-ids<span class="w"> </span>i-xxxxx
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># EBS 볼륨 확장 (무중단)</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>aws<span class="w"> </span>ec2<span class="w"> </span>modify-volume<span class="w"> </span>--volume-id<span class="w"> </span>vol-xxxxx<span class="w"> </span>--size<span class="w"> </span><span class="m">200</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1"># EC2 내부에서:</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>sudo<span class="w"> </span>growpart<span class="w"> </span>/dev/xvda<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/xvda1
-</code></pre></div>
-<p>이것만으로도 동시 크롤링 수를 3 → 8개까지 늘릴 수 있고, 디스크 여유도 확보됩니다.</p>
-<hr />
-<h2 id="9">9. 리스크 및 고려사항</h2>
-<table>
-<thead>
-<tr>
-<th>리스크</th>
-<th>영향</th>
-<th>완화 방안</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EFS 네트워크 레이턴시</td>
-<td>대용량 스크린샷 저장 속도 저하</td>
-<td>EFS Provisioned Throughput 또는 세션별 로컬 캐시 후 비동기 동기화</td>
-</tr>
-<tr>
-<td>Worker 장애 시 세션 유실</td>
-<td>RUNNING 세션이 FAILED로 전환되지 않을 수 있음</td>
-<td>기존 <code>sync_job_status_runner</code>로 감지 (30초 주기)</td>
-</tr>
-<tr>
-<td>RDS 비용 증가</td>
-<td>외부 DB 사용 시 월 $15~50 추가</td>
-<td>초기에는 Master의 PostgreSQL Docker를 Worker에서 TCP 접속으로 공유</td>
-</tr>
-<tr>
-<td>보안</td>
-<td>Worker가 Master DB에 직접 접속</td>
-<td>VPC Security Group으로 Worker IP만 허용</td>
-</tr>
-</tbody>
-</table>
 
 
 
