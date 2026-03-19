@@ -7,7 +7,7 @@
 모든 도메인은 **Ports & Adapters (Hexagonal) Architecture**를 따릅니다.
 
 ```mermaid
-graph LR
+graph TD
     subgraph Driving["Driving (Input)"]
         A[FastAPI Router]
         B[APScheduler]
@@ -60,7 +60,9 @@ graph TD
 
     SCHED[scheduler] -.-> CRAWL
     STORAGE[storage] -.-> CRAWL
+    STORAGE -.-> SCRIPT
     WORKFLOW[workflow] -.-> AIFIX
+    WORKFLOW -.-> ENHANCE
     ADMIN[admin] -.-> WS
     SHARED[shared] -.-> WS
     SHARED -.-> SCHED
@@ -71,7 +73,10 @@ graph TD
     style JOB fill:#4051B5,color:#fff
     style CRAWL fill:#e53935,color:#fff
     style AIFIX fill:#FB8C00,color:#fff
+    style ENHANCE fill:#FB8C00,color:#fff
+    style SCRIPT fill:#1565C0,color:#fff
     style SCHED fill:#43A047,color:#fff
+    style STORAGE fill:#43A047,color:#fff
     style WORKFLOW fill:#8E24AA,color:#fff
 ```
 
