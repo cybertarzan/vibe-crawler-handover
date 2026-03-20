@@ -28,10 +28,4 @@
 | ECR | `vibe-backend`, `vibe-migration` |
 | SSH Key | `heesun.pem` |
 
-### 세부 문서
 
-- [빌드 및 배포](01-build-deploy.md)
-- [모니터링 및 로그](02-monitoring-logs.md)
-- [외부 서비스 연동](03-external-services.md)
-- [DB 관리](04-db-management.md)
-- [스토리지 용량 계획](05-storage-planning.md)
