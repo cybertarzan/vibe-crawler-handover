@@ -74,3 +74,6 @@ markdown_extensions:
       alternate_style: true
   - attr_list
   - md_in_html
+
+extra_css:
+  - stylesheets/extra.css

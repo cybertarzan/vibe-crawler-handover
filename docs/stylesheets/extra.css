@@ -1,0 +1,4 @@
+/* 표를 컨텐츠 영역 전체 너비로 */
+.md-typeset table:not([class]) {
+  width: 100%;
+}
