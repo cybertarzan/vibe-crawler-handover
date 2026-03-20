@@ -10,25 +10,31 @@
       
       
       
+        <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/05-infra-ktcloud/">
       
+      
+        <link rel="prev" href="../04-infra-and-plan/">
+      
+      
+        <link rel="next" href="../../../issues/bug-002-pid-zombie/">
       
       
         
       
       
-      <link rel="icon" href="/vibe-crawler-handover/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Vibe Crawling Platform - 인수인계 문서</title>
+        <title>KT Cloud 인프라 및 실행 계획 - Vibe Crawling Platform - 인수인계 문서</title>
       
     
     
-      <link rel="stylesheet" href="/vibe-crawler-handover/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/vibe-crawler-handover/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("/vibe-crawler-handover/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kt-cloud" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="/vibe-crawler-handover/." title="Vibe Crawling Platform - 인수인계 문서" class="md-header__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
+    <a href="../../.." title="Vibe Crawling Platform - 인수인계 문서" class="md-header__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              KT Cloud 인프라 및 실행 계획
             
           </span>
         </div>
@@ -219,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/vibe-crawler-handover/." title="Vibe Crawling Platform - 인수인계 문서" class="md-nav__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
+    <a href="../../.." title="Vibe Crawling Platform - 인수인계 문서" class="md-nav__button md-logo" aria-label="Vibe Crawling Platform - 인수인계 문서" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -249,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -330,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/01-project-overview/" class="md-nav__link">
+      <a href="../../../backend/01-project-overview/" class="md-nav__link">
         
   
   
@@ -358,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/02-architecture-and-design/" class="md-nav__link">
+      <a href="../../../backend/02-architecture-and-design/" class="md-nav__link">
         
   
   
@@ -437,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/" class="md-nav__link">
+      <a href="../../../backend/operations/" class="md-nav__link">
         
   
   
@@ -465,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/01-build-deploy/" class="md-nav__link">
+      <a href="../../../backend/operations/01-build-deploy/" class="md-nav__link">
         
   
   
@@ -493,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/02-monitoring-logs/" class="md-nav__link">
+      <a href="../../../backend/operations/02-monitoring-logs/" class="md-nav__link">
         
   
   
@@ -521,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/03-external-services/" class="md-nav__link">
+      <a href="../../../backend/operations/03-external-services/" class="md-nav__link">
         
   
   
@@ -549,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/04-db-management/" class="md-nav__link">
+      <a href="../../../backend/operations/04-db-management/" class="md-nav__link">
         
   
   
@@ -577,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/operations/05-storage-planning/" class="md-nav__link">
+      <a href="../../../backend/operations/05-storage-planning/" class="md-nav__link">
         
   
   
@@ -613,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/backend/04-issues-and-history/" class="md-nav__link">
+      <a href="../../../backend/04-issues-and-history/" class="md-nav__link">
         
   
   
@@ -702,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/frontend/01-project-overview/" class="md-nav__link">
+      <a href="../../../frontend/01-project-overview/" class="md-nav__link">
         
   
   
@@ -730,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/frontend/02-architecture-and-design/" class="md-nav__link">
+      <a href="../../../frontend/02-architecture-and-design/" class="md-nav__link">
         
   
   
@@ -758,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/frontend/03-operations-guide/" class="md-nav__link">
+      <a href="../../../frontend/03-operations-guide/" class="md-nav__link">
         
   
   
@@ -786,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/frontend/04-issues-and-history/" class="md-nav__link">
+      <a href="../../../frontend/04-issues-and-history/" class="md-nav__link">
         
   
   
@@ -818,8 +829,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -830,13 +843,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -857,7 +868,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -872,6 +883,8 @@
                 
   
   
+    
+  
   
   
     
@@ -881,13 +894,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -908,7 +919,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -926,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/plans/server-scaling/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -954,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/plans/server-scaling/01-scale-up/" class="md-nav__link">
+      <a href="../01-scale-up/" class="md-nav__link">
         
   
   
@@ -982,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/plans/server-scaling/02-worker-separation/" class="md-nav__link">
+      <a href="../02-worker-separation/" class="md-nav__link">
         
   
   
@@ -1010,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/plans/server-scaling/04-infra-and-plan/" class="md-nav__link">
+      <a href="../04-infra-and-plan/" class="md-nav__link">
         
   
   
@@ -1035,10 +1046,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/plans/server-scaling/05-infra-ktcloud/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KT Cloud 인프라 및 실행 계획
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1054,6 +1092,159 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kt-cloud_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KT Cloud 리소스
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        디스크 용량 해결
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        네트워크 구성
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="네트워크 구성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-vs-kt-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS vs KT Cloud 네트워크 매핑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 실행 계획
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="단계별 실행 계획">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: 준비 (코드 변경 없이 즉시 가능)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: 공유 스토리지 전환
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: 세션 선점 락 구현
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Worker 서버 배포
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: 운영 전환 및 검증
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        리스크 및 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1135,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/issues/bug-002-pid-zombie/" class="md-nav__link">
+      <a href="../../../issues/bug-002-pid-zombie/" class="md-nav__link">
         
   
   
@@ -1163,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/issues/log-cleanup-checklist/" class="md-nav__link">
+      <a href="../../../issues/log-cleanup-checklist/" class="md-nav__link">
         
   
   
@@ -1191,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/issues/storage-analysis/" class="md-nav__link">
+      <a href="../../../issues/storage-analysis/" class="md-nav__link">
         
   
   
@@ -1219,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vibe-crawler-handover/issues/zombie-container-disk/" class="md-nav__link">
+      <a href="../../../issues/zombie-container-disk/" class="md-nav__link">
         
   
   
@@ -1264,6 +1455,149 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kt-cloud_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KT Cloud 리소스
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        디스크 용량 해결
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        네트워크 구성
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="네트워크 구성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-vs-kt-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS vs KT Cloud 네트워크 매핑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 실행 계획
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="단계별 실행 계획">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: 준비 (코드 변경 없이 즉시 가능)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: 공유 스토리지 전환
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: 세션 선점 락 구현
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Worker 서버 배포
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: 운영 전환 및 검증
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        리스크 및 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1276,8 +1610,245 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="kt-cloud">KT Cloud 인프라 및 실행 계획</h1>
+<blockquote>
+<p>AWS 대신 KT Cloud(G1/G2) 환경에서 Worker 분리 구성 시 참고</p>
+</blockquote>
+<hr />
+<h2 id="kt-cloud_1">KT Cloud 리소스</h2>
+<table>
+<thead>
+<tr>
+<th>리소스</th>
+<th>스펙</th>
+<th>용도</th>
+<th>예상 월 비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Master VM</strong></td>
+<td>m2.large (2vCPU, 4GB)</td>
+<td>API + 스케줄러 + DB</td>
+<td>기존 유지</td>
+</tr>
+<tr>
+<td><strong>Worker VM × 1</strong></td>
+<td>m2.xlarge (4vCPU, 8GB)</td>
+<td>크롤러 실행 전용</td>
+<td>~₩70,000</td>
+</tr>
+<tr>
+<td><strong>NAS (NFS)</strong></td>
+<td>Standard</td>
+<td>공유 스토리지</td>
+<td>~₩30,000/100GB</td>
+</tr>
+<tr>
+<td><strong>방화벽 정책</strong></td>
+<td>Zone 내부 통신</td>
+<td>서버 간 통신</td>
+<td>무료</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>KT Cloud는 G1(Classic) / G2(Enterprise) 존에 따라 콘솔 및 서비스명이 다릅니다.</p>
+</blockquote>
+<hr />
+<h2 id="_1">디스크 용량 해결</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>현재</th>
+<th>NAS 전환 후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>용량 제한</td>
+<td>100GB (Block Storage 고정)</td>
+<td><strong>최대 10TB</strong> (NAS 볼륨)</td>
+</tr>
+<tr>
+<td>서버 간 공유</td>
+<td>❌ 불가</td>
+<td>✅ NFS 마운트</td>
+</tr>
+<tr>
+<td>자동 백업</td>
+<td>수동</td>
+<td>NAS 스냅샷 기능</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>Block Storage ₩10,000/100GB</td>
+<td>NAS ₩30,000/100GB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">네트워크 구성</h2>
+<pre class="mermaid"><code>graph TD
+    subgraph ZONE["KT Cloud Zone (Default Network)"]
+        subgraph PUB["Public Tier"]
+            MASTER["Master VM&lt;br/&gt;포트포워딩: 80,443,8080(외부)&lt;br/&gt;5432(내부만)"]
+        end
+        subgraph PRIV["Private Tier"]
+            WORKER["Worker VM-1&lt;br/&gt;방화벽: 6767(Master만)"]
+        end
+        NAS["NAS 볼륨&lt;br/&gt;NFS 마운트 (Zone 내부)"]
+    end
+
+    MASTER &lt;--&gt;|6767| WORKER
+    MASTER &lt;--&gt;|NFS| NAS
+    WORKER &lt;--&gt;|NFS| NAS</code></pre>
+<h3 id="aws-vs-kt-cloud">AWS vs KT Cloud 네트워크 매핑</h3>
+<table>
+<thead>
+<tr>
+<th>AWS</th>
+<th>KT Cloud</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC</td>
+<td>Zone (Default Network)</td>
+<td>KT Cloud는 Zone 단위로 네트워크 격리</td>
+</tr>
+<tr>
+<td>Public Subnet</td>
+<td>Public Tier + 포트포워딩</td>
+<td>공인 IP는 포트포워딩으로 연결</td>
+</tr>
+<tr>
+<td>Private Subnet</td>
+<td>Private Tier</td>
+<td>내부 IP만 사용</td>
+</tr>
+<tr>
+<td>Security Group</td>
+<td>방화벽 정책</td>
+<td>콘솔에서 포트별 인/아웃바운드 설정</td>
+</tr>
+<tr>
+<td>EFS</td>
+<td>NAS (NFS)</td>
+<td>KT Cloud NAS 서비스 사용</td>
+</tr>
+<tr>
+<td>EBS</td>
+<td>Block Storage</td>
+<td>가상서버에 추가 디스크 연결</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">단계별 실행 계획</h2>
+<h3 id="phase-1">Phase 1: 준비 (코드 변경 없이 즉시 가능)</h3>
+<ul>
+<li>[ ] Master VM 스펙 변경 (콘솔 → 서버 중지 → 스펙 변경 → 재시작)</li>
+<li>[ ] Block Storage 추가 연결 (100GB → 200GB)</li>
+<li>[ ] <code>max_concurrent_jobs</code> 조정 (3 → 5)</li>
+<li>[ ] 소요: <strong>1일</strong>, 코드 변경 없음</li>
+</ul>
+<h3 id="phase-2">Phase 2: 공유 스토리지 전환</h3>
+<ul>
+<li>[ ] KT Cloud NAS 신청 + NFS 마운트 (Master)</li>
+<li>[ ] 기존 system_storage 데이터 NAS로 마이그레이션</li>
+<li>[ ] Docker Compose <code>volumes</code> NAS 경로로 변경</li>
+<li>[ ] 소요: <strong>2~3일</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># KT Cloud NAS 마운트 예시</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span>&lt;NAS_IP&gt;:/vol/&lt;볼륨명&gt;<span class="w"> </span>/mnt/system_storage
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># /etc/fstab에 영구 마운트 추가</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;NAS_IP&gt;:/vol/&lt;볼륨명&gt; /mnt/system_storage nfs defaults 0 0&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
+</code></pre></div>
+<h3 id="phase-3">Phase 3: 세션 선점 락 구현</h3>
+<ul>
+<li>[ ] <code>acquire_session_lock()</code> 메서드 구현</li>
+<li>[ ] <code>CheckAndExecutePendingSessionsService</code>에 선점 로직 적용</li>
+<li>[ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)</li>
+<li>[ ] 소요: <strong>2~3일</strong></li>
+</ul>
+<h3 id="phase-4-worker">Phase 4: Worker 서버 배포</h3>
+<ul>
+<li>[ ] Worker VM 생성 (콘솔 → 가상서버 → 생성)</li>
+<li>[ ] 방화벽 정책 설정: Master↔Worker 간 6767, 5432 포트 허용</li>
+<li>[ ] NAS 마운트 (Worker에도 동일 NAS 볼륨 연결)</li>
+<li>[ ] Worker Agent 서비스 구현 + 배포</li>
+<li>[ ] Master↔Worker 통신 테스트</li>
+<li>[ ] 소요: <strong>3~5일</strong></li>
+</ul>
+<h3 id="phase-5">Phase 5: 운영 전환 및 검증</h3>
+<ul>
+<li>[ ] 멀티 서버 통합 테스트</li>
+<li>[ ] 배치 선점 경합 테스트</li>
+<li>[ ] Worker 장애 시뮬레이션</li>
+<li>[ ] 운영 환경 롤아웃</li>
+<li>[ ] 소요: <strong>2~3일</strong></li>
+</ul>
+<hr />
+<h2 id="_4">리스크 및 고려사항</h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>영향</th>
+<th>완화 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAS 네트워크 레이턴시</td>
+<td>대용량 스크린샷 저장 속도 저하</td>
+<td>NAS를 동일 Zone에 구성, 로컬 캐시 후 비동기 동기화</td>
+</tr>
+<tr>
+<td>Worker 장애 시 세션 유실</td>
+<td>RUNNING 세션이 FAILED로 전환되지 않을 수 있음</td>
+<td>기존 <code>sync_job_status_runner</code>로 감지 (30초 주기)</td>
+</tr>
+<tr>
+<td>DB 접근</td>
+<td>Worker → Master PostgreSQL TCP 접속 필요</td>
+<td>방화벽 정책으로 Worker IP만 5432 허용</td>
+</tr>
+<tr>
+<td>KT Cloud 콘솔 제약</td>
+<td>CLI/API 자동화 제한적</td>
+<td>수동 프로비저닝 후 Ansible/SSH 기반 배포 스크립트 구성</td>
+</tr>
+<tr>
+<td>NAS 용량 한계</td>
+<td>최대 10TB (AWS EFS 대비 제한)</td>
+<td>보관 기간 관리 + 자동 정리로 대응</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1320,10 +1891,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/vibe-crawler-handover/", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "/vibe-crawler-handover/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="/vibe-crawler-handover/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

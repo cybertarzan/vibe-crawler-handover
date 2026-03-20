@@ -43,18 +43,20 @@ graph TD
 
 ## 방안 비교
 
-| 방안 | 방식 | 코드 변경 | 확장성 | 권장 |
-|---|---|---|---|---|
-| [**A: Scale-Up**](01-scale-up.md) | 인스턴스/디스크 증량 | 없음 | 제한적 | Phase 1 즉시 적용 |
-| [**B: Worker 분리**](02-worker-separation.md) | Master/Worker 역할 분리 | 필요 | ✅ 수평 확장 | **⭐ 권장** |
+| 방안 | 방식 | 코드 변경 | 확장성 | 비용 | 권장 환경 |
+|---|---|---|---|---|---|
+| [**A: Scale-Up**](01-scale-up.md) | 인스턴스/디스크 증량 | 없음 | 제한적 | 고정비 증가 | 즉시 적용 |
+| [**B: Worker 분리**](02-worker-separation.md) | Master/Worker 역할 분리 | Worker Agent 개발 | ✅ 수평 확장 | EC2 상시 비용 | KT Cloud |
+| [**C: ECS Fargate**](03-ecs-fargate.md) | AWS 관리형 컨테이너 | Adapter 교체 | ✅ 자동 확장 | 실행 시간만 과금 | **⭐ AWS** |
 
-!!! success "권장: 방안 B (Worker 분리)"
-    사장(스케줄러)이 1명이므로 배치 선점 문제가 **원천 차단**됩니다.  
-    Phase 1(Scale-Up)을 즉시 적용하고, Phase 2~5로 방안 B를 순차 구현하는 전략을 권장합니다.
+!!! success "환경별 권장"
+    - **KT Cloud**: 방안 B (Worker 분리) — VM 직접 운영
+    - **AWS**: 방안 C (ECS Fargate) — 서버리스, Adapter 교체만으로 전환 가능
 
 ### 세부 문서
 
 - [방안 A: Scale-Up](01-scale-up.md) — 즉시 적용 가능한 스케일업
-- [방안 B: Worker 분리](02-worker-separation.md) — 권장 아키텍처 상세 설계
+- [방안 B: Worker 분리](02-worker-separation.md) — Master/Worker 역할 분리 설계
+- [방안 C: ECS Fargate](03-ecs-fargate.md) — AWS 관리형 컨테이너 오케스트레이션
 - [AWS 인프라 및 실행 계획](04-infra-and-plan.md) — AWS 기준 리소스, 네트워크, 단계별 계획
 - [KT Cloud 인프라 및 실행 계획](05-infra-ktcloud.md) — KT Cloud 기준 리소스, NAS, 방화벽

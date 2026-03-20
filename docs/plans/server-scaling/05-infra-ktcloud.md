@@ -58,56 +58,8 @@ graph TD
 | EFS | NAS (NFS) | KT Cloud NAS 서비스 사용 |
 | EBS | Block Storage | 가상서버에 추가 디스크 연결 |
 
----
 
-## 단계별 실행 계획
 
-### Phase 1: 준비 (코드 변경 없이 즉시 가능)
-
-- [ ] Master VM 스펙 변경 (콘솔 → 서버 중지 → 스펙 변경 → 재시작)
-- [ ] Block Storage 추가 연결 (100GB → 200GB)
-- [ ] `max_concurrent_jobs` 조정 (3 → 5)
-- [ ] 소요: **1일**, 코드 변경 없음
-
-### Phase 2: 공유 스토리지 전환
-
-- [ ] KT Cloud NAS 신청 + NFS 마운트 (Master)
-- [ ] 기존 system_storage 데이터 NAS로 마이그레이션
-- [ ] Docker Compose `volumes` NAS 경로로 변경
-- [ ] 소요: **2~3일**
-
-```bash
-# KT Cloud NAS 마운트 예시
-sudo mount -t nfs <NAS_IP>:/vol/<볼륨명> /mnt/system_storage
-# /etc/fstab에 영구 마운트 추가
-echo "<NAS_IP>:/vol/<볼륨명> /mnt/system_storage nfs defaults 0 0" | sudo tee -a /etc/fstab
-```
-
-### Phase 3: 세션 선점 락 구현
-
-- [ ] `acquire_session_lock()` 메서드 구현
-- [ ] `CheckAndExecutePendingSessionsService`에 선점 로직 적용
-- [ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)
-- [ ] 소요: **2~3일**
-
-### Phase 4: Worker 서버 배포
-
-- [ ] Worker VM 생성 (콘솔 → 가상서버 → 생성)
-- [ ] 방화벽 정책 설정: Master↔Worker 간 6767, 5432 포트 허용
-- [ ] NAS 마운트 (Worker에도 동일 NAS 볼륨 연결)
-- [ ] Worker Agent 서비스 구현 + 배포
-- [ ] Master↔Worker 통신 테스트
-- [ ] 소요: **3~5일**
-
-### Phase 5: 운영 전환 및 검증
-
-- [ ] 멀티 서버 통합 테스트
-- [ ] 배치 선점 경합 테스트
-- [ ] Worker 장애 시뮬레이션
-- [ ] 운영 환경 롤아웃
-- [ ] 소요: **2~3일**
-
----
 
 ## 리스크 및 고려사항
 

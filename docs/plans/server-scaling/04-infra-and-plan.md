@@ -42,48 +42,8 @@ graph TD
 
 ```
 
----
 
-## 단계별 실행 계획
 
-### Phase 1: 준비 (코드 변경 없이 즉시 가능)
-
-- [ ] Master EC2 인스턴스 스케일업 (t3.medium → t3.large)
-- [ ] EBS 디스크 증량 (96GB → 200GB)
-- [ ] `max_concurrent_jobs` 조정 (3 → 5)
-- [ ] 소요: **1일**, 코드 변경 없음
-
-### Phase 2: 공유 스토리지 전환
-
-- [ ] AWS EFS 생성 + Master에 마운트
-- [ ] 기존 system_storage 데이터 EFS로 마이그레이션
-- [ ] Docker Compose `volumes` EFS 경로로 변경
-- [ ] 소요: **2~3일**
-
-### Phase 3: 세션 선점 락 구현
-
-- [ ] `acquire_session_lock()` 메서드 구현
-- [ ] `CheckAndExecutePendingSessionsService`에 선점 로직 적용
-- [ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)
-- [ ] 소요: **2~3일**
-
-### Phase 4: Worker 서버 배포
-
-- [ ] Worker EC2 프로비저닝 (Private Subnet)
-- [ ] Worker Agent 서비스 구현 (크롤링 실행 API만)
-- [ ] `CrawlingExecutorAdapter` Worker 라우팅 로직
-- [ ] Master↔Worker 통신 테스트
-- [ ] 소요: **3~5일**
-
-### Phase 5: 운영 전환 및 검증
-
-- [ ] 스테이징 환경에서 멀티 서버 통합 테스트
-- [ ] 배치 선점 경합 테스트 (동시 다발 PENDING 생성)
-- [ ] Worker 장애 시뮬레이션 (kill 후 복구 확인)
-- [ ] 운영 환경 롤아웃
-- [ ] 소요: **2~3일**
-
----
 
 ## 리스크 및 고려사항
 
