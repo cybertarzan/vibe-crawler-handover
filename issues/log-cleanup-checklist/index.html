@@ -1474,6 +1474,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2026-03-20_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자동 정리 최종 검증 결과 (2026-03-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1783,6 +1794,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2026-03-20_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자동 정리 최종 검증 결과 (2026-03-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1807,16 +1829,10 @@
 <blockquote>
 <p>작성일: 2026-03-17 13:22 KST
 예정일: 2026-03-18 04:00 KST (스케줄러 자동 실행)
-상태: ⏳ <strong>자동 정리 실행 대기 중</strong> — 아래 검증 결과가 모두 체크되면 완료 처리</p>
+상태: ✅ <strong>자동 정리 정상 작동 확인 완료</strong> (2026-03-20)</p>
 </blockquote>
 <hr />
 <h2 id="_2">배경</h2>
-<pre class="mermaid"><code>flowchart LR
-    A["매일 새벽 4시&lt;br/&gt;스케줄러 실행"] --&gt; B["get_old_session_directories()"]
-    B --&gt; C{"날짜 &gt; 보관기간?"}
-    C --&gt;|10일 초과| D["rm -rf 삭제"]
-    C --&gt;|10일 이내| E["유지"]
-</code></pre>
 <p><code>get_old_session_directories()</code>에서 경로 불일치 버그를 수정함 (<code>base_path/RESULTS_DIR</code> → <code>results_base_path</code>).
 이전까지 자동 정리가 작동하지 않아 2월 데이터까지 남아있었음.</p>
 <p><strong>배포 시점</strong>: 2026-03-17 10:47 KST
@@ -2154,10 +2170,52 @@
 | <code>2222...</code> | <code>3c042a40</code> | <code>20260309</code> | 1.2G |
 | <code>2222...</code> | <code>e0b0a404</code> | <code>20260309</code> | 44M |</p>
 <ul>
-<li>[ ] 20일 오전, 위 11개 폴더가 자동 삭제되었는지 확인</li>
-<li>[ ] 백엔드 로그에서 <code>로그 정리 완료</code> 메시지 유무 확인</li>
-<li>[ ] 디스크 사용 변화 확인</li>
+<li>[x] 20일 오전, 위 11개 폴더가 자동 삭제되었는지 확인 → ✅ 자동 삭제 완료</li>
+<li>[x] 백엔드 로그에서 <code>로그 정리 완료</code> 메시지 유무 확인 → ✅ 확인됨</li>
+<li>[x] 디스크 사용 변화 확인 → 85% (81GB / 96GB)</li>
 </ul>
+<hr />
+<h2 id="2026-03-20_1">✅ 자동 정리 최종 검증 결과 (2026-03-20)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실행 시각</td>
+<td>2026-03-20 04:00:00 KST</td>
+</tr>
+<tr>
+<td>삭제 디렉토리</td>
+<td><strong>11개</strong></td>
+</tr>
+<tr>
+<td>삭제 파일</td>
+<td><strong>2,096개</strong></td>
+</tr>
+<tr>
+<td>삭제 용량</td>
+<td><strong>1,333.94MB (~1.3GB)</strong></td>
+</tr>
+<tr>
+<td>cutoff_date</td>
+<td>2026-03-10 04:00:00 KST</td>
+</tr>
+<tr>
+<td>다음 실행</td>
+<td>2026-03-21 04:00:00 KST</td>
+</tr>
+<tr>
+<td>디스크 사용률</td>
+<td>85% (81GB / 96GB)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>결론</strong>: 코드 배포 후 스케줄러가 정상 작동하여 <code>20260309</code> 폴더 11개를 자동 삭제함.
+더 이상 수동 삭제 불필요. 매일 새벽 4시에 10일 초과 로그가 자동 정리됨.</p>
 
 
 
