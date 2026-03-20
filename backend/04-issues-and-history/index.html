@@ -784,10 +784,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#38-amd64" class="md-nav__link">
+  <a href="#38" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.8 AMD64 플랫폼 강제 빌드
+        3.8 워크스페이스 간 프로젝트 이관
       
     </span>
   </a>
@@ -798,18 +798,7 @@
   <a href="#39" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.9 워크스페이스 간 프로젝트 이관
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#310" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.10 고아 컨테이너 자동 정리
+        3.9 고아 컨테이너 자동 정리
       
     </span>
   </a>
@@ -1637,10 +1626,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#38-amd64" class="md-nav__link">
+  <a href="#38" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.8 AMD64 플랫폼 강제 빌드
+        3.8 워크스페이스 간 프로젝트 이관
       
     </span>
   </a>
@@ -1651,18 +1640,7 @@
   <a href="#39" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.9 워크스페이스 간 프로젝트 이관
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#310" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.10 고아 컨테이너 자동 정리
+        3.9 고아 컨테이너 자동 정리
       
     </span>
   </a>
@@ -1822,18 +1800,13 @@
 <li><code>workspaces</code> 테이블 + 모든 엔티티에 <code>workspace_id</code> FK</li>
 <li>사업자별 데이터 격리, API URL 워크스페이스 단위 관리</li>
 </ul>
-<h3 id="38-amd64">3.8 AMD64 플랫폼 강제 빌드</h3>
-<ul>
-<li>Mac ARM64에서 빌드한 이미지가 EC2(AMD64)에서 동작 안 함</li>
-<li><code>--platform linux/amd64</code>로 강제 빌드</li>
-</ul>
-<h3 id="39">3.9 워크스페이스 간 프로젝트 이관</h3>
+<h3 id="38">3.8 워크스페이스 간 프로젝트 이관</h3>
 <ul>
 <li>이관 시 DB <code>workspace_id</code> + <code>name</code> 변경 + 파일시스템 <code>mv</code></li>
 <li>FK cascade로 jobs/sessions 등은 별도 수정 불필요</li>
 <li>실제 사례: MINDK → INCRO 8개 프로젝트 이관 (2026-03-17)</li>
 </ul>
-<h3 id="310">3.10 고아 컨테이너 자동 정리</h3>
+<h3 id="39">3.9 고아 컨테이너 자동 정리</h3>
 <ul>
 <li>Docker Cleanup Service에 역방향 검사: <code>docker ps</code> → 세션 DB 확인 → 불일치 시 stop+rm</li>
 <li>compose 외부 크롤러 컨테이너(<code>crawler-*</code>)도 정리 대상</li>
