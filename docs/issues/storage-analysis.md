@@ -1,126 +1,78 @@
 # 운영서버 스토리지 분석 리포트
 
-> 분석일: 2026-03-17 15:22 KST
+> 최초 분석: 2026-03-17 15:22 KST
+> 최종 갱신: 2026-03-20 13:42 KST
 
 ---
 
 ## 1. 디스크 현황
 
-| 항목 | 값 |
-|---|---|
-| 전체 디스크 | 96GB |
-| 사용 중 | 51GB (53%) |
-| 여유 | 46GB |
-| `vibe-deployment/` | 37GB |
+| 항목 | 3/17 분석 | 3/20 현재 | 변화 |
+|---|---|---|---|
+| 전체 디스크 | 96GB | 96GB | - |
+| 사용 중 | 51GB (53%) | 81GB (85%) | +30GB (세션 누적) |
+| 여유 | 46GB | 16GB | ⚠️ 감소 |
 
 ---
 
 ## 2. system_storage 디렉토리별 용량
 
-```mermaid
-pie title system_storage 용량 분포
-    "workspaces (36GB)" : 36000
-    "workflow_logs (62MB)" : 62
-    "mdc (26MB)" : 26
-    "projects Legacy (20MB)" : 20
-    "기타" : 1
-```
-
-| 디렉토리 | 용량 | 자동 정리 | 상태 |
-|---|---|---|---|
-| `workspaces/` | **36GB** | ✅ 10일 보관 | 정상 (세션 로그 자동 삭제) |
-| `workflow_logs/` | 62MB | ❌ **미정리** | ⚠️ 1/20~3/17 96개 계속 누적 |
-| `mdc/` | 26MB | ❌ **미정리** | ⚠️ data/videos 폴더 |
-| `projects/` (Legacy) | 20MB | ❌ **미정리** | ⚠️ 6개 프로젝트 스크립트 잔존 |
-| `hotfixes/` | 68KB | ❌ | 3개 파일 (유지 필요) |
-| `sessions/` (Legacy) | 36KB | ❌ **미정리** | ⚠️ 4개 에러 로그 잔존 |
-| `enhanced_scripts/` | 8KB | - | 비어있음 |
-| `crawling_results/` (Legacy) | 4KB | - | 비어있음 |
+| 디렉토리 | 3/17 | 3/20 현재 | 자동 정리 | 상태 |
+|---|---|---|---|---|
+| `workspaces/` | 36GB | **68GB** | ✅ 10일 보관 | 정상 (자동 삭제 작동 확인 3/20) |
+| `workflow_logs/` | 62MB (96개) | **63MB (107개)** | ❌ **미정리** | ⚠️ 계속 누적 중 |
+| `mdc/` | 26MB | **26MB** | ❌ **미정리** | 변동 없음 |
+| `projects/` (Legacy) | 20MB | **36KB** | - | ✅ 스크립트 삭제 완료 (3/19), 빈 폴더만 잔존 |
+| `hotfixes/` | 68KB | **68KB** | ❌ | 유지 필요 |
+| `sessions/` (Legacy) | 36KB | - | - | ✅ 삭제됨 |
+| `enhanced_scripts/` | 8KB | 8KB | - | 비어있음 |
+| `crawling_results/` (Legacy) | 4KB | 4KB | - | 비어있음 |
 
 ---
 
 ## 3. 워크스페이스 상세
 
-```mermaid
-pie title 워크스페이스 용량 비교
-    "MINDK (33GB)" : 33
-    "INCRO (3.5GB)" : 3.5
-    "legacy_archive" : 0.001
-```
+| 워크스페이스 | 3/17 | 3/20 현재 | 프로젝트 수 |
+|---|---|---|---|
+| MINDK (`22222222-...`) | 33GB | **67GB** | 4개 |
+| INCRO (`11111111-...`) | 3.5GB | **1.8GB** | 15개 |
 
-| 워크스페이스 | 용량 | 프로젝트 수 |
-|---|---|---|
-| MINDK (`22222222-...`) | **33GB** | 6개 |
-| INCRO (`11111111-...`) | 3.5GB | 16개 |
-| `legacy_archive` | 424KB | 0개 |
+> MINDK의 `3c042a40`(SK 데이터수집) 프로젝트가 하루 1.2GB씩 생성 → 디스크 증가 주 원인
 
 ---
 
 ## 4. Docker 리소스
 
-| 항목 | 용량 | 회수 가능 |
-|---|---|---|
-| 이미지(총 4개) | 10.5GB | **8GB** (미사용 2개: 크롤러 이미지) |
-| Build Cache | 7.6GB | **3.6GB** |
-| Local Volumes | 50MB | **50MB** (전부 미사용) |
-| 컨테이너 | 34MB | 0 |
-
-### 미사용 크롤러 이미지
-
-```
-vibe-crawler-774d5129-...:latest  4GB   ← 미사용
-vibe-crawler-e07185ae-...:latest  4GB   ← 미사용 (이전 좀비 세션)
-```
+| 항목 | 3/17 | 3/20 현재 | 회수 가능 |
+|---|---|---|---|
+| 이미지(총) | 10.5GB (4개) | **7.8GB (2개)** | ✅ 좀비 이미지 정리됨 |
+| Build Cache | 7.6GB | **6.3GB** | **6.3GB** |
+| Local Volumes | 50MB | **49MB** | **49MB** |
+| 컨테이너 | 34MB | 57MB | 0 |
 
 ---
 
-## 5. 정리되지 않는 파일 목록
+## 5. 정리 현황 (3/17 대비)
 
-### ⚠️ 5-1. workflow_logs (62MB, 96개)
+### ✅ 해결됨
 
-- **경로**: `system_storage/workflow_logs/`
-- **내용**: 워크플로우 실행 JSON 로그 (세션별 1개씩 생성)
-- **범위**: 2025-12-30 ~ 2026-03-17
-- **문제**: 자동 정리 로직 없음, 무한 누적
-- **권장**: `cleanup_old_logs_runner`와 같은 보관 기간 적용 (10일)
+| 항목 | 조치 | 날짜 |
+|---|---|---|
+| Legacy `projects/` 스크립트 | workspace로 복사 후 삭제 (39MB→36KB) | 3/19 |
+| Legacy `sessions/` | 삭제 | 3/19 이전 |
+| `legacy_archive` 워크스페이스 | 삭제 확인 | 3/20 확인 |
+| 좀비 크롤러 이미지 2개 (8GB) | 정리됨 | 3/19~20 |
+| 로그 자동 정리 | ✅ 정상 작동 확인 (3/20 04:00) | 3/20 |
 
-### ⚠️ 5-2. projects/ (Legacy, 20MB)
+### ⚠️ 미해결
 
-- **경로**: `system_storage/projects/`
-- **내용**: 과거 구조에서 생성된 스크립트 6개 프로젝트분
-- **문제**: 현재는 `workspaces/*/projects/*/scripts/`에 저장 → 이중 보관
-- **권장**: workspace 내 동일 프로젝트에 스크립트 존재 확인 후 삭제
-
-### ⚠️ 5-3. sessions/ (Legacy, 36KB)
-
-- **경로**: `system_storage/sessions/`
-- **내용**: 과거 세션 에러 로그 4개
-- **문제**: 더 이상 여기에 기록 안 함
-- **권장**: 삭제 가능
-
-### ⚠️ 5-4. mdc/ (26MB)
-
-- **경로**: `system_storage/mdc/`
-- **내용**: MDC 관련 data/videos
-- **문제**: 자동 정리 없음
-- **권장**: 사용 빈도 확인 후 보관 정책 결정
-
-### ⚠️ 5-5. Docker 미사용 리소스 (약 11.6GB)
-
-| 리소스 | 회수 가능 용량 |
-|---|---|
-| 미사용 크롤러 이미지 2개 | ~8GB |
-| Build Cache | ~3.6GB |
-| Local Volumes (미사용) | ~50MB |
-| **합계** | **~11.6GB** |
-
-- **권장**: `docker system prune -a` 또는 `docker image prune -a`
-
-### ⚠️ 5-6. legacy_archive 워크스페이스 (424KB)
-
-- **경로**: `workspaces/legacy_archive/`
-- **문제**: 프로젝트 0개, 용도 불명
-- **권장**: 삭제 가능
+| 항목 | 용량 | 권장 |
+|---|---|---|
+| `workflow_logs/` 107개 누적 | 63MB | 자동 정리 로직 추가 (10일 보관) |
+| `mdc/` | 26MB | 보관 정책 수립 |
+| Docker Build Cache | 6.3GB | `docker builder prune` |
+| Docker Local Volumes | 49MB | `docker volume prune` |
+| Legacy `projects/` 빈 폴더 8개 | 36KB | 삭제 가능 |
 
 ---
 
@@ -128,16 +80,16 @@ vibe-crawler-e07185ae-...:latest  4GB   ← 미사용 (이전 좀비 세션)
 
 | 대상 | 용량 |
 |---|---|
-| Docker 미사용(이미지+캐시+볼륨) | ~11.6GB |
-| Legacy sessions/ | 36KB |
-| Legacy projects/ (확인 후) | 20MB |
-| legacy_archive/ | 424KB |
-| **합계** | **~11.6GB** |
+| Docker Build Cache | ~6.3GB |
+| Docker Local Volumes | ~49MB |
+| Legacy `projects/` 빈 폴더 | 36KB |
+| **합계** | **~6.3GB** |
 
 ## 7. 장기 개선 필요
 
 | 대상 | 현재 | 권장 |
 |---|---|---|
-| `workflow_logs/` | 무한 누적 | 자동 정리 로직 추가 |
+| `workflow_logs/` | 무한 누적 (107개) | 자동 정리 로직 추가 |
 | `mdc/` | 무한 누적 | 보관 정책 수립 |
-| Docker 이미지 | 크롤러 이미지 수동 삭제만 | 빌드 후 자동 정리 |
+| MINDK `3c042a40` (SK) | 하루 1.2GB | 보관 기간 단축 또는 디스크 증량 검토 |
+| Docker Build Cache | 수동 정리 | 빌드 후 자동 `docker builder prune` |

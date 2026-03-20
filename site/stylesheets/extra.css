@@ -15,3 +15,8 @@
   display: table !important;
   table-layout: auto !important;
 }
+
+/* Mermaid 다이어그램 가운데 정렬 */
+.md-typeset .mermaid {
+  text-align: center !important;
+}
