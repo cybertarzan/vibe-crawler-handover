@@ -49,7 +49,6 @@ nav:
       - 개요: plans/server-scaling/index.md
       - 방안 A - Scale-Up: plans/server-scaling/01-scale-up.md
       - 방안 B - Worker 분리 (권장): plans/server-scaling/02-worker-separation.md
-      - 방안 C - 멀티 Master: plans/server-scaling/03-multi-master.md
       - AWS 인프라 및 실행 계획: plans/server-scaling/04-infra-and-plan.md
   - 이슈:
     - BUG-002 PID 저장실패 / 좀비세션: issues/bug-002-pid-zombie.md

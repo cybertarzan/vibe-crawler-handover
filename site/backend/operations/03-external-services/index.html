@@ -603,6 +603,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        데이터 업로드 API (후처리)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excel-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excel 매체 분석기 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#openai-api" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -614,10 +636,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        스크립트 다운로드 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-executor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Executor (워크플로우)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mail-api" class="md-nav__link">
     <span class="md-ellipsis">
       
         Mail 알림 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        환경변수 요약
       
     </span>
   </a>
@@ -1376,6 +1431,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        데이터 업로드 API (후처리)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excel-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excel 매체 분석기 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#openai-api" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1387,10 +1464,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        스크립트 다운로드 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-executor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Executor (워크플로우)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mail-api" class="md-nav__link">
     <span class="md-ellipsis">
       
         Mail 알림 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        환경변수 요약
       
     </span>
   </a>
@@ -1420,6 +1530,7 @@
 <h1 id="_1">외부 서비스 연동</h1>
 <hr />
 <h2 id="incross-i-flow-api">Incross i-flow API</h2>
+<p>프로젝트 생성 시 광고주/캠페인/매체 정보를 조회하는 Incross 사 연동 API.</p>
 <table>
 <thead>
 <tr>
@@ -1443,17 +1554,106 @@
 </table>
 <ul>
 <li>활성화 조건: <code>is_api_transmission_enabled = True</code> + Workspace <code>data_api_url</code> 설정</li>
+<li><strong>Adapter</strong>: <code>incross_api_adapter.py</code> (직접) / <code>incross_api_tunnel_adapter.py</code> (SSH 터널)</li>
+<li><strong>용도</strong>: <code>get_advertisers()</code>, <code>get_campaigns()</code>, <code>get_media()</code></li>
 </ul>
+<hr />
+<h2 id="api">데이터 업로드 API (후처리)</h2>
+<p>크롤링 완료 후 수집된 데이터를 i-flow에 업로드하는 2단계 API.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>API</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차</td>
+<td><code>analyze</code></td>
+<td>CSV 파일 분석 (컬럼 매핑, 유효성 검증)</td>
+</tr>
+<tr>
+<td>2차</td>
+<td><code>upload</code></td>
+<td>분석 완료된 데이터를 i-flow에 업로드</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Adapter</strong>: <code>data_upload_adapter.py</code> (직접) / <code>data_upload_tunnel_adapter.py</code> (SSH 터널)</li>
+<li><strong>결과 저장</strong>: <code>post_crawling_api_results</code> 테이블에 단계별 기록</li>
+</ul>
+<hr />
+<h2 id="excel-api">Excel 매체 분석기 API</h2>
+<p>크롤링으로 수집한 CSV/Excel 파일의 컬럼을 자동 분석하는 서비스.</p>
+<ul>
+<li><strong>Adapter</strong>: <code>excel_media_analyzer_adapter.py</code></li>
+<li><strong>용도</strong>: 수집 파일의 컬럼 구조 파악, 매핑 자동화</li>
+</ul>
+<hr />
 <h2 id="openai-api">OpenAI API</h2>
 <ul>
-<li><strong>용도</strong>: AI Auto Fix (크롤링 실패 분석 및 스크립트 수정), 입력정보 추가 (크롤링 대상 사이트 분석 및 입력 항목 자동 생성)</li>
-<li><strong>키 관리</strong>: <code>.env</code> 파일의 <code>OPENAI_API_KEY</code></li>
+<li><strong>용도</strong>:<ul>
+<li>AI Auto Fix — 크롤링 실패 분석 및 스크립트 수정</li>
+<li>입력정보 추가 — 크롤링 대상 사이트 분석 및 입력 항목 자동 생성</li>
+<li>VLM (Vision Language Model) — 스크린샷 기반 화면 분석</li>
 </ul>
+</li>
+<li><strong>Adapter</strong>: <code>open_ai_vision_adapter.py</code></li>
+<li><strong>키 관리</strong>: <code>.env</code> 파일의 <code>OPENAI_API_KEY</code></li>
+<li><strong>타임아웃</strong>: 1800초 (30분)</li>
+</ul>
+<hr />
+<h2 id="api_1">스크립트 다운로드 API</h2>
+<p>원격 저장소에서 크롤링 스크립트를 다운로드하는 서비스.</p>
+<ul>
+<li><strong>Adapter</strong>: <code>script_download_adapter.py</code></li>
+<li><strong>용도</strong>: 프로젝트 생성/업데이트 시 스크립트 파일 동기화</li>
+</ul>
+<hr />
+<h2 id="remote-executor">Remote Executor (워크플로우)</h2>
+<p>워크플로우 내 Python 스크립트를 원격 서버에서 실행하는 서비스.</p>
+<ul>
+<li><strong>Adapter</strong>: <code>remote_executor_adapter.py</code></li>
+<li><strong>용도</strong>: 워크플로우 노드에서 스크립트 원격 실행</li>
+</ul>
+<hr />
 <h2 id="mail-api">Mail 알림 API</h2>
 <ul>
-<li><strong>URL</strong>: <code>MAIL_API_URL</code></li>
+<li><strong>URL</strong>: <code>.env</code> 파일의 <code>MAIL_API_URL</code></li>
+<li><strong>Adapter</strong>: <code>email_notification_adapter.py</code></li>
 <li><strong>트리거</strong>: Job 완료/실패 시 알림 수신자에게 메일 발송</li>
 </ul>
+<hr />
+<h2 id="_2">환경변수 요약</h2>
+<table>
+<thead>
+<tr>
+<th>변수</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OPENAI_API_KEY</code></td>
+<td>OpenAI API 인증</td>
+</tr>
+<tr>
+<td><code>MAIL_API_URL</code></td>
+<td>메일 발송 API 엔드포인트</td>
+</tr>
+<tr>
+<td><code>INCROSS_API_URL</code></td>
+<td>i-flow API Base URL</td>
+</tr>
+<tr>
+<td><code>SSH_TUNNEL_*</code></td>
+<td>로컬 개발용 SSH 터널 설정</td>
+</tr>
+</tbody>
+</table>
 
 
 

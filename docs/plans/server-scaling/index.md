@@ -47,7 +47,6 @@ graph TD
 |---|---|---|---|---|
 | [**A: Scale-Up**](01-scale-up.md) | 인스턴스/디스크 증량 | 없음 | 제한적 | Phase 1 즉시 적용 |
 | [**B: Worker 분리**](02-worker-separation.md) | Master/Worker 역할 분리 | 필요 | ✅ 수평 확장 | **⭐ 권장** |
-| [**C: 멀티 Master**](03-multi-master.md) | Active-Active 구조 | 큼 | ✅✅ | 장기 옵션 |
 
 !!! success "권장: 방안 B (Worker 분리)"
     사장(스케줄러)이 1명이므로 배치 선점 문제가 **원천 차단**됩니다.  
@@ -57,5 +56,4 @@ graph TD
 
 - [방안 A: Scale-Up](01-scale-up.md) — 즉시 적용 가능한 스케일업
 - [방안 B: Worker 분리](02-worker-separation.md) — 권장 아키텍처 상세 설계
-- [방안 C: 멀티 Master](03-multi-master.md) — Active-Active + 배치 선점 문제
 - [AWS 인프라 및 실행 계획](04-infra-and-plan.md) — 리소스, 네트워크, 단계별 계획
