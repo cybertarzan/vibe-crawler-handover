@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/04-infra-and-plan/">
       
       
-        <link rel="prev" href="../02-worker-separation/">
+        <link rel="prev" href="../03-ecs-fargate/">
       
       
         <link rel="next" href="../05-infra-ktcloud/">
@@ -1000,7 +1000,35 @@
   <span class="md-ellipsis">
     
   
-    방안 B - Worker 분리 (권장)
+    방안 B - Worker 분리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-ecs-fargate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 C - ECS Fargate
   
 
     
@@ -1115,78 +1143,6 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         리스크 및 고려사항
@@ -1484,78 +1440,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         리스크 및 고려사항
       
     </span>
@@ -1673,47 +1557,7 @@
     MASTER &lt;--&gt;|2049| EFS
     WORKER &lt;--&gt;|2049| EFS
 </code></pre>
-<hr />
-<h2 id="_3">단계별 실행 계획</h2>
-<h3 id="phase-1">Phase 1: 준비 (코드 변경 없이 즉시 가능)</h3>
-<ul>
-<li>[ ] Master EC2 인스턴스 스케일업 (t3.medium → t3.large)</li>
-<li>[ ] EBS 디스크 증량 (96GB → 200GB)</li>
-<li>[ ] <code>max_concurrent_jobs</code> 조정 (3 → 5)</li>
-<li>[ ] 소요: <strong>1일</strong>, 코드 변경 없음</li>
-</ul>
-<h3 id="phase-2">Phase 2: 공유 스토리지 전환</h3>
-<ul>
-<li>[ ] AWS EFS 생성 + Master에 마운트</li>
-<li>[ ] 기존 system_storage 데이터 EFS로 마이그레이션</li>
-<li>[ ] Docker Compose <code>volumes</code> EFS 경로로 변경</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<h3 id="phase-3">Phase 3: 세션 선점 락 구현</h3>
-<ul>
-<li>[ ] <code>acquire_session_lock()</code> 메서드 구현</li>
-<li>[ ] <code>CheckAndExecutePendingSessionsService</code>에 선점 로직 적용</li>
-<li>[ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<h3 id="phase-4-worker">Phase 4: Worker 서버 배포</h3>
-<ul>
-<li>[ ] Worker EC2 프로비저닝 (Private Subnet)</li>
-<li>[ ] Worker Agent 서비스 구현 (크롤링 실행 API만)</li>
-<li>[ ] <code>CrawlingExecutorAdapter</code> Worker 라우팅 로직</li>
-<li>[ ] Master↔Worker 통신 테스트</li>
-<li>[ ] 소요: <strong>3~5일</strong></li>
-</ul>
-<h3 id="phase-5">Phase 5: 운영 전환 및 검증</h3>
-<ul>
-<li>[ ] 스테이징 환경에서 멀티 서버 통합 테스트</li>
-<li>[ ] 배치 선점 경합 테스트 (동시 다발 PENDING 생성)</li>
-<li>[ ] Worker 장애 시뮬레이션 (kill 후 복구 확인)</li>
-<li>[ ] 운영 환경 롤아웃</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<hr />
-<h2 id="_4">리스크 및 고려사항</h2>
+<h2 id="_3">리스크 및 고려사항</h2>
 <table>
 <thead>
 <tr>

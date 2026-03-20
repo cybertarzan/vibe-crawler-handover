@@ -1000,7 +1000,35 @@
   <span class="md-ellipsis">
     
   
-    방안 B - Worker 분리 (권장)
+    방안 B - Worker 분리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-ecs-fargate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 C - ECS Fargate
   
 
     
@@ -1160,78 +1188,6 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         리스크 및 고려사항
@@ -1518,78 +1474,6 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        단계별 실행 계획
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="단계별 실행 계획">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: 준비 (코드 변경 없이 즉시 가능)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: 공유 스토리지 전환
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: 세션 선점 락 구현
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Worker 서버 배포
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: 운영 전환 및 검증
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         리스크 및 고려사항
       
     </span>
@@ -1753,53 +1637,7 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="_3">단계별 실행 계획</h2>
-<h3 id="phase-1">Phase 1: 준비 (코드 변경 없이 즉시 가능)</h3>
-<ul>
-<li>[ ] Master VM 스펙 변경 (콘솔 → 서버 중지 → 스펙 변경 → 재시작)</li>
-<li>[ ] Block Storage 추가 연결 (100GB → 200GB)</li>
-<li>[ ] <code>max_concurrent_jobs</code> 조정 (3 → 5)</li>
-<li>[ ] 소요: <strong>1일</strong>, 코드 변경 없음</li>
-</ul>
-<h3 id="phase-2">Phase 2: 공유 스토리지 전환</h3>
-<ul>
-<li>[ ] KT Cloud NAS 신청 + NFS 마운트 (Master)</li>
-<li>[ ] 기존 system_storage 데이터 NAS로 마이그레이션</li>
-<li>[ ] Docker Compose <code>volumes</code> NAS 경로로 변경</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># KT Cloud NAS 마운트 예시</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span>&lt;NAS_IP&gt;:/vol/&lt;볼륨명&gt;<span class="w"> </span>/mnt/system_storage
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># /etc/fstab에 영구 마운트 추가</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;NAS_IP&gt;:/vol/&lt;볼륨명&gt; /mnt/system_storage nfs defaults 0 0&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
-</code></pre></div>
-<h3 id="phase-3">Phase 3: 세션 선점 락 구현</h3>
-<ul>
-<li>[ ] <code>acquire_session_lock()</code> 메서드 구현</li>
-<li>[ ] <code>CheckAndExecutePendingSessionsService</code>에 선점 로직 적용</li>
-<li>[ ] 유닛테스트 작성 (경쟁 조건 시뮬레이션)</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<h3 id="phase-4-worker">Phase 4: Worker 서버 배포</h3>
-<ul>
-<li>[ ] Worker VM 생성 (콘솔 → 가상서버 → 생성)</li>
-<li>[ ] 방화벽 정책 설정: Master↔Worker 간 6767, 5432 포트 허용</li>
-<li>[ ] NAS 마운트 (Worker에도 동일 NAS 볼륨 연결)</li>
-<li>[ ] Worker Agent 서비스 구현 + 배포</li>
-<li>[ ] Master↔Worker 통신 테스트</li>
-<li>[ ] 소요: <strong>3~5일</strong></li>
-</ul>
-<h3 id="phase-5">Phase 5: 운영 전환 및 검증</h3>
-<ul>
-<li>[ ] 멀티 서버 통합 테스트</li>
-<li>[ ] 배치 선점 경합 테스트</li>
-<li>[ ] Worker 장애 시뮬레이션</li>
-<li>[ ] 운영 환경 롤아웃</li>
-<li>[ ] 소요: <strong>2~3일</strong></li>
-</ul>
-<hr />
-<h2 id="_4">리스크 및 고려사항</h2>
+<h2 id="_3">리스크 및 고려사항</h2>
 <table>
 <thead>
 <tr>

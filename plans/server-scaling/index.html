@@ -1114,7 +1114,35 @@
   <span class="md-ellipsis">
     
   
-    방안 B - Worker 분리 (권장)
+    방안 B - Worker 분리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-ecs-fargate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    방안 C - ECS Fargate
   
 
     
@@ -1580,7 +1608,8 @@
 <th>방식</th>
 <th>코드 변경</th>
 <th>확장성</th>
-<th>권장</th>
+<th>비용</th>
+<th>권장 환경</th>
 </tr>
 </thead>
 <tbody>
@@ -1589,26 +1618,39 @@
 <td>인스턴스/디스크 증량</td>
 <td>없음</td>
 <td>제한적</td>
-<td>Phase 1 즉시 적용</td>
+<td>고정비 증가</td>
+<td>즉시 적용</td>
 </tr>
 <tr>
 <td><a href="02-worker-separation/"><strong>B: Worker 분리</strong></a></td>
 <td>Master/Worker 역할 분리</td>
-<td>필요</td>
+<td>Worker Agent 개발</td>
 <td>✅ 수평 확장</td>
-<td><strong>⭐ 권장</strong></td>
+<td>EC2 상시 비용</td>
+<td>KT Cloud</td>
+</tr>
+<tr>
+<td><a href="03-ecs-fargate/"><strong>C: ECS Fargate</strong></a></td>
+<td>AWS 관리형 컨테이너</td>
+<td>Adapter 교체</td>
+<td>✅ 자동 확장</td>
+<td>실행 시간만 과금</td>
+<td><strong>⭐ AWS</strong></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition success">
-<p class="admonition-title">권장: 방안 B (Worker 분리)</p>
-<p>사장(스케줄러)이 1명이므로 배치 선점 문제가 <strong>원천 차단</strong>됩니다.<br />
-Phase 1(Scale-Up)을 즉시 적용하고, Phase 2~5로 방안 B를 순차 구현하는 전략을 권장합니다.</p>
+<p class="admonition-title">환경별 권장</p>
+<ul>
+<li><strong>KT Cloud</strong>: 방안 B (Worker 분리) — VM 직접 운영</li>
+<li><strong>AWS</strong>: 방안 C (ECS Fargate) — 서버리스, Adapter 교체만으로 전환 가능</li>
+</ul>
 </div>
 <h3 id="_5">세부 문서</h3>
 <ul>
 <li><a href="01-scale-up/">방안 A: Scale-Up</a> — 즉시 적용 가능한 스케일업</li>
-<li><a href="02-worker-separation/">방안 B: Worker 분리</a> — 권장 아키텍처 상세 설계</li>
+<li><a href="02-worker-separation/">방안 B: Worker 분리</a> — Master/Worker 역할 분리 설계</li>
+<li><a href="03-ecs-fargate/">방안 C: ECS Fargate</a> — AWS 관리형 컨테이너 오케스트레이션</li>
 <li><a href="04-infra-and-plan/">AWS 인프라 및 실행 계획</a> — AWS 기준 리소스, 네트워크, 단계별 계획</li>
 <li><a href="05-infra-ktcloud/">KT Cloud 인프라 및 실행 계획</a> — KT Cloud 기준 리소스, NAS, 방화벽</li>
 </ul>
