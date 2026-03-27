@@ -27,8 +27,8 @@ theme:
 
 nav:
   - Home: index.md
-  - 변경 이력:
-    - 2026-03-27: changes/20260327.md
+  # - 변경 이력:
+  #   - 2026-03-27: changes/20260327.md
   - Backend:
     - 프로젝트 개요: backend/01-project-overview.md
     - 아키텍처 및 설계: backend/02-architecture-and-design.md
