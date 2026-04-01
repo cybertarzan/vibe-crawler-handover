@@ -58,6 +58,8 @@ nav:
     - 로그 자동 정리 검증: issues/log-cleanup-checklist.md
     - 운영서버 스토리지 분석: issues/storage-analysis.md
     - 좀비 컨테이너 및 디스크 관리: issues/zombie-container-disk.md
+  # - 요청 가이드:
+  #   - 크롤링 재수집 API: '요청 가이드/크롤링_재수집_API_가이드.md'
 
 
 markdown_extensions:
