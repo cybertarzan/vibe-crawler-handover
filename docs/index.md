@@ -37,3 +37,9 @@
 | [로그 자동 정리 검증](issues/log-cleanup-checklist.md) | 로그 자동 정리 체크리스트 및 검증 결과 |
 | [운영서버 스토리지 분석](issues/storage-analysis.md) | 운영서버 디스크 사용량 분석 |
 | [좀비 컨테이너 및 디스크 관리](issues/zombie-container-disk.md) | 좀비 컨테이너 정리 및 디스크 관리 |
+
+### 견적서
+
+| 문서 | 내용 |
+|---|---|
+| [[ISS-003] 크롤러-워커 통합 견적서](estimates/ISS-003_크롤러-워커분리/ISS-003_최종견적서.md) | Vibe Crawler 시스템 성능 최적화를 위한 워커 분배 아키텍처 도입 견적 및 기능 명세 |
