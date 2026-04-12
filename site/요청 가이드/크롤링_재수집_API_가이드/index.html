@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/frontend/04-issues-and-history/">
+        <link rel="canonical" href="https://angalle.github.io/vibe-crawler-handover/%EC%9A%94%EC%B2%AD%20%EA%B0%80%EC%9D%B4%EB%93%9C/%ED%81%AC%EB%A1%A4%EB%A7%81_%EC%9E%AC%EC%88%98%EC%A7%91_API_%EA%B0%80%EC%9D%B4%EB%93%9C/">
       
       
-        <link rel="prev" href="../03-operations-guide/">
-      
-      
-        <link rel="next" href="../../plans/server-scaling/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>이슈 및 히스토리 - Vibe Crawling Platform - 인수인계 문서</title>
+        <title>크롤링 재수집(Refetch) API 연동 가이드 - Vibe Crawling Platform - 인수인계 문서</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#refetch-api" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              이슈 및 히스토리
+              크롤링 재수집(Refetch) API 연동 가이드
             
           </span>
         </div>
@@ -651,20 +647,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -685,7 +681,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -703,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-project-overview/" class="md-nav__link">
+      <a href="../../frontend/01-project-overview/" class="md-nav__link">
         
   
   
@@ -731,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-architecture-and-design/" class="md-nav__link">
+      <a href="../../frontend/02-architecture-and-design/" class="md-nav__link">
         
   
   
@@ -759,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-operations-guide/" class="md-nav__link">
+      <a href="../../frontend/03-operations-guide/" class="md-nav__link">
         
   
   
@@ -784,37 +780,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    이슈 및 히스토리
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../frontend/04-issues-and-history/" class="md-nav__link">
         
   
   
@@ -830,109 +799,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 미해결 이슈
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 해결된 버그
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 기술 주의사항
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 기술 주의사항">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-orval-vue-3-watch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 Orval + Vue 3 watch 타이밍
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 다중 테넌트 (워크스페이스)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 API 코드 재생성
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4 아토믹 디자인 규칙
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1421,10 +1287,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 미해결 이슈
+        1. API 개요
       
     </span>
   </a>
@@ -1432,33 +1298,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 해결된 버그
+        2. API 상세 스펙
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 기술 주의사항
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 기술 주의사항">
+    <nav class="md-nav" aria-label="2. API 상세 스펙">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-orval-vue-3-watch" class="md-nav__link">
+  <a href="#21-request-path-variable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Orval + Vue 3 watch 타이밍
+        2.1. Request Path Variable
       
     </span>
   </a>
@@ -1466,10 +1321,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
+  <a href="#22-request-query-parameter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 다중 테넌트 (워크스페이스)
+        2.2. Request Query Parameter
       
     </span>
   </a>
@@ -1477,10 +1332,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-api" class="md-nav__link">
+  <a href="#23-request-body-json" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 API 코드 재생성
+        2.3. Request Body (JSON)
       
     </span>
   </a>
@@ -1488,10 +1343,49 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
+  <a href="#24-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4 아토믹 디자인 규칙
+        2.4. Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 세션 상태 조회 API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 세션 상태 조회 API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-request-path-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Request Path Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Response 예시
       
     </span>
   </a>
@@ -1523,93 +1417,140 @@
   
 
 
-<h1 id="_1">프론트엔드 — 이슈 리스트 및 히스토리</h1>
+<h1 id="refetch-api">크롤링 재수집(Refetch) API 연동 가이드</h1>
+<p>본 문서는 Vibe Crawling Platform 백엔드의 <strong>재수집(Refetch) API</strong>를 외부 시스템이나 다른 서비스에서 직접 호출하여 연동하기 위한 가이드입니다.</p>
 <hr />
-<h2 id="1">1. 미해결 이슈</h2>
+<h2 id="1-api">1. API 개요</h2>
+<p>재수집(Refetch) API는 기존에 등록된 크롤링 스크립트를 코드를 수정하지 않고 <strong>특정 날짜 범위(<code>sdate</code>, <code>edate</code>)를 지정하여 다시 실행</strong>할 때 사용합니다. 호출 시 백엔드에서는 새로운 크롤링 세션(Session)을 생성하고 비동기적으로 스크립트를 실행합니다.</p>
+<ul>
+<li><strong>URL Path</strong>: <code>/api/v1/jobs/{job_id}/refetch</code></li>
+<li><strong>HTTP Method</strong>: <code>POST</code></li>
+<li><strong>Content-Type</strong>: <code>application/json</code></li>
+</ul>
+<hr />
+<h2 id="2-api">2. API 상세 스펙</h2>
+<h3 id="21-request-path-variable">2.1. Request Path Variable</h3>
 <table>
 <thead>
 <tr>
-<th>#</th>
-<th>분류</th>
-<th>내용</th>
-<th>비고</th>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Orval</td>
-<td><code>watch</code> 콜백 실행 타이밍 불안정</td>
-<td>Vue 3 Composition API에서 간헐적 발생</td>
-</tr>
-<tr>
-<td>2</td>
-<td>구조</td>
-<td>일부 pages 컨포넌트가 너무 큼 (ProjectDetailPage 117KB)</td>
-<td>features로 로직 분리 필요</td>
+<td><code>job_id</code></td>
+<td>String(UUID)</td>
+<td><strong>Yes</strong></td>
+<td>크롤링 대상이 되는 Job의 고유 ID</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="2">2. 해결된 버그</h2>
+<h3 id="22-request-query-parameter">2.2. Request Query Parameter</h3>
 <table>
 <thead>
 <tr>
-<th>#</th>
-<th>증상</th>
-<th>원인</th>
-<th>해결</th>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>AI Improvement 버튼 클릭 시 저장되지 않은 데이터로 실행</td>
-<td>사용자가 업로드 후 저장하지 않고 바로 클릭</td>
-<td>UI 플로우에 저장 강제 단계 추가</td>
+<td><code>workspace_id</code></td>
+<td>String</td>
+<td>No</td>
+<td>멀티 워크스페이스 환경일 경우 지정하는 워크스페이스 ID (필요 시 포함)</td>
 </tr>
 </tbody>
 </table>
+<h3 id="23-request-body-json">2.3. Request Body (JSON)</h3>
+<p>재수집할 대상 데이터의 시작 날짜와 종료 날짜를 지정합니다. 형태는 자유로우나 크롤러 스크립트가 파싱 가능한 형태의 날짜 문자열(예: <code>YYYY-MM-DD</code> 또는 <code>YYYYMMDD</code>)을 권장합니다.
+| Name | Type | Required | Description |
+| ---- | ---- | -------- | ----------- |
+| <code>sdate</code> | String | No | 수집 시작 일자 (예: <code>"2023-10-01"</code>) |
+| <code>edate</code> | String | No | 수집 종료 일자 (예: <code>"2023-10-31"</code>) |</p>
+<p><strong>요청 (Request) 예시:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://{API_HOST}/api/v1/jobs/123e4567-e89b-12d3-a456-426614174000/refetch?workspace_id=my-workspace&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s1">        &quot;sdate&quot;: &quot;2023-10-01&quot;,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">        &quot;edate&quot;: &quot;2023-10-02&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">    }&#39;</span>
+</code></pre></div></p>
+<h3 id="24-response">2.4. Response</h3>
+<p>요청이 정상적으로 접수되면, 생성된 세션 ID와 작업의 현재 상태를 포함한 JSON이 반환됩니다. (크롤링 자체는 백그라운드에서 비동기적으로 수행됩니다.)</p>
+<p><strong>HTTP Status Response:</strong>
+- <code>200 OK</code>: 재수집 요청 성공
+- <code>404 Not Found</code>: 존재하지 않는 <code>job_id</code>
+- <code>500 Internal Server Error</code>: 서버 내부 오류 발생</p>
+<p><strong>응답 (Response) 파라미터:</strong>
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| <code>message</code> | String | 처리 결과 메시지 |
+| <code>session_id</code> | String(UUID) | 신규로 생성된 크롤링 세션(실행 단위)의 고유 ID |
+| <code>job_id</code> | String(UUID) | 요청한 Job ID |
+| <code>status</code> | String | 세션의 현재 상태 (예: <code>"running"</code>, <code>"pending"</code> 등) |</p>
+<p><strong>응답 (Response) 예시:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Refetch가 성공적으로 시작되었습니다.&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;987fcdeb-51a2-43d7-9012-3456789abcde&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;job_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;running&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</code></pre></div></p>
 <hr />
-<h2 id="3">3. 기술 주의사항</h2>
-<h3 id="31-orval-vue-3-watch">3.1 Orval + Vue 3 watch 타이밍</h3>
+<h2 id="3-api">3. 세션 상태 조회 API</h2>
+<p>재수집 요청으로 발급된 <code>session_id</code>를 사용하여 크롤링의 현재 상태 및 최종 결과를 조회하는 API입니다.</p>
 <ul>
-<li><strong>문제</strong>: Orval 자동 생성 API 훅에서 <code>watch</code> 콜백 실행 타이밍이 불안정</li>
-<li><strong>대응</strong>: <code>watchEffect</code> 대신 명시적 <code>watch</code>와 <code>nextTick</code> 조합 사용</li>
-<li><strong>예시</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// ❌ 불안정</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">watchEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="c1">// Orval 훅의 데이터 참조</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">})</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">// ✅ 안정</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">watch</span><span class="p">(</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">queryResult</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">newData</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">nextTick</span><span class="p">()</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="c1">// 데이터 처리</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">)</span>
-</code></pre></div></li>
+<li><strong>URL Path</strong>: <code>/api/v1/sessions/{session_id}</code></li>
+<li><strong>HTTP Method</strong>: <code>GET</code></li>
 </ul>
-<h3 id="32">3.2 다중 테넌트 (워크스페이스)</h3>
-<ul>
-<li>워크스페이스 전환 시 이전 워크스페이스 데이터가 잠시 표시될 수 있음</li>
-<li>전환 시 Vue Query 캐시 무효화 필요</li>
-<li>백엔드에서 <code>workspace_id</code> 필터로 데이터 격리 보장됨</li>
-</ul>
-<h3 id="33-api">3.3 API 코드 재생성</h3>
-<ul>
-<li>백엔드 API 스펙 변경 후 반드시 <code>yarn generate:api</code> 실행</li>
-<li>생성된 <code>src/api/</code> 코드는 직접 수정 금지</li>
-<li>Orval 설정: <code>orval.config.ts</code></li>
-</ul>
-<h3 id="34">3.4 아토믹 디자인 규칙</h3>
-<ul>
-<li>atoms에 API 호출/store 접근 금지</li>
-<li>molecules에서 atoms만 import (다른 molecules 참조 피할 것)</li>
-<li>새 컨포넌트 작성 시 반드시 계층 확인 (비즈니스 로직 → organisms/features, 레이아웃 → templates)</li>
-</ul>
+<h3 id="31-request-path-variable">3.1. Request Path Variable</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code></td>
+<td>String(UUID)</td>
+<td><strong>Yes</strong></td>
+<td>상태를 확인할 대상 세션 ID (<code>job_id</code>가 아닌 <code>session_id</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-response">3.2. Response 예시</h3>
+<p>실행 진행 상황을 나타내는 상태(<code>status</code>)와 최종 데이터 수집 성공 여부(<code>success</code>)를 반환합니다. 
+<code>status</code> 값이 <code>completed</code> 또는 <code>failed</code>, <code>cancelled</code> 중 하나일 때 실행이 모두 종료된 것입니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;987fcdeb-51a2-43d7-9012-3456789abcde&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;job_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&quot;trigger_source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;refetch&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nt">&quot;sdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">&quot;edate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-02&quot;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-05T10:00:00.000000&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&quot;started_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-05T10:00:05.123456&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">&quot;completed_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-05T10:05:00.987654&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-05T10:05:00.987654&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">&quot;execution_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">295.8</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nt">&quot;error_log_file_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nt">&quot;session_summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nt">&quot;ai_auto_fix_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
+</code></pre></div>
 
 
 

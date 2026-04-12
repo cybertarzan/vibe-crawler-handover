@@ -2,98 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/01-project-overview/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/02-architecture-and-design/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/04-issues-and-history/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/01-build-deploy/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/02-monitoring-logs/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/03-external-services/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/04-db-management/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/backend/operations/05-storage-planning/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/changes/</loc>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/changes/20260327/</loc>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/changes/20260410/</loc>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/estimates/ISS-003_%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%9B%8C%EC%BB%A4%EB%B6%84%EB%A6%AC/ISS-003_%EC%B5%9C%EC%A2%85%EA%B2%AC%EC%A0%81%EC%84%9C/</loc>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/frontend/01-project-overview/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/frontend/02-architecture-and-design/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/frontend/03-operations-guide/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/frontend/04-issues-and-history/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/issues/bug-002-pid-zombie/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/issues/log-cleanup-checklist/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/issues/storage-analysis/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/issues/zombie-container-disk/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/01-scale-up/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/02-worker-separation/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/03-ecs-fargate/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/04-infra-and-plan/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
     </url>
     <url>
          <loc>https://angalle.github.io/vibe-crawler-handover/plans/server-scaling/05-infra-ktcloud/</loc>
-         <lastmod>2026-03-20</lastmod>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/%EC%9A%94%EC%B2%AD%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EC%9D%B8%ED%81%AC%EB%A1%9C%EC%8A%A4_%EB%A7%A4%EC%B2%B4_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%97%B0%EB%8F%99_%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
+         <lastmod>2026-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://angalle.github.io/vibe-crawler-handover/%EC%9A%94%EC%B2%AD%20%EA%B0%80%EC%9D%B4%EB%93%9C/%ED%81%AC%EB%A1%A4%EB%A7%81_%EC%9E%AC%EC%88%98%EC%A7%91_API_%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
+         <lastmod>2026-04-10</lastmod>
     </url>
 </urlset>

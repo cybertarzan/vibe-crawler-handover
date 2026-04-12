@@ -1,4 +1,8 @@
 api-project-704331937799-8ea9d6b861d8.json
+client_secret_704331937799-72u0mjd3900btd22b73i0h27kv67b5b5.apps.googleusercontent.com
 upload_to_google.py
 __pycache__/
 *.pyc
+credentials.json
+token.pickle
+client_secret_*.json

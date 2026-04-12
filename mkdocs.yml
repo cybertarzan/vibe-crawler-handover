@@ -59,8 +59,8 @@ nav:
     - 로그 자동 정리 검증: issues/log-cleanup-checklist.md
     - 운영서버 스토리지 분석: issues/storage-analysis.md
     - 좀비 컨테이너 및 디스크 관리: issues/zombie-container-disk.md
-  - 견적서:
-    - [ISS-003] 크롤러-워커 통합 견적서: estimates/ISS-003_크롤러-워커분리/ISS-003_최종견적서.md
+  # - 견적서:
+  #   - '[ISS-003] 크롤러-워커 통합 견적서': estimates/ISS-003_크롤러-워커분리/ISS-003_최종견적서.md
   # - 요청 가이드:
   #   - 크롤링 재수집 API: '요청 가이드/크롤링_재수집_API_가이드.md'
 
