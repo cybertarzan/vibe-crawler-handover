@@ -2,25 +2,38 @@
 
 ---
 
-## 마이그레이션
+## 1. 데이터베이스 마이그레이션 전략 (Alembic)
 
+운영 DB는 기본적으로 분리된 외부망(RDS 등) 연결을 전제로 구성됩니다. 신규 기능 배포 시 스키마가 변경되었다면 다음 두 가지 방법 중 하나를 선택하여 진행할 수 있습니다.
+
+### 방법 A: 마이그레이션 전용 컨테이너 실행
+운영 서버의 Docker 환경에서 1회성 마이그레이션 컨테이너를 직접 가동하여 스키마를 최신 상태로 업데이트하는 방법입니다.
 ```bash
-# 상태 확인
-alembic -c shared/alembic/alembic.ini current
-
-# 적용
-alembic -c shared/alembic/alembic.ini upgrade head
-
-# Docker
-docker-compose exec -T backend python -m alembic -c /app/alembic.ini upgrade head
+# 인프라 환경 폴더 이동 후 마이그레이션 컨테이너 1회 구동
+docker compose -f docker-compose.prod.yml up migration
 ```
 
-## 백업/복원
+### 방법 B: 직접 SQL 쿼리 적용 (추천)
+외부 DB에 도커 컨테이너가 직접 접근하기 어려운 엄격한 망분리 환경이라면, **개발팀(담당자)에게 배포용 마이그레이션 SQL 스크립트 파일을 따로 요청**하시면 됩니다. 전달받은 SQL 파일을 직접 DB 관리 툴로 실행하여 스키마를 안전하게 업데이트할 수 있습니다.
 
+---
+
+## 2. 데이터베이스 백업 및 복구
+
+운영 중인 DB 서버에 연결하여 데이터를 직접 덤프(백업)하거나 복원할 수 있습니다. 
+아래 절차는 PostgreSQL 을 기준으로, 운영 서버(또는 외부 관리형 DB와 연결된 컨테이너)에서 수행하는 표준 방법입니다.
+
+### 2.1 데이터베이스 백업
 ```bash
-# 백업
-docker-compose exec db pg_dump -U vibe_user vibe_crawling_db > backup_$(date +%Y%m%d).sql
-
-# 복원
-cat backup.sql | docker-compose exec -T db psql -U vibe_user -d vibe_crawling_db
+# 외부 DB를 사용할 경우, psql 클라이언트 툴을 사용해 직접 백업을 수행합니다.
+# pg_dump를 통해 백업할 경우의 예시
+pg_dump -U vibe_user -h <DB_HOSTNAME> -p 15432 vibe_crawling_db > backup_$(date +%Y%m%d).sql
 ```
+
+### 2.2 데이터베이스 복원
+```bash
+# 기존 백업된 SQL 덤프 파일을 DB에 밀어 넣습니다.
+psql -U vibe_user -h <DB_HOSTNAME> -p 15432 -d vibe_crawling_db < backup_20260416.sql
+```
+
+> **주의:** 로컬 환경(`docker-compose.yml`)과 운영 환경(`docker-compose.prod.yml`)의 컨테이너 구성이 다르므로, 운영 배포 시에는 로컬 볼륨 마운트 DB가 아닌 설정된 `DATABASE_URL` 에 따라 외부 DB(RDS 등)에 직접 접근하여 DB를 관리하게 됩니다.

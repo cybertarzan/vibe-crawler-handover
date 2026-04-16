@@ -506,41 +506,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        인프라 정보
+        시스템 접속 정보
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="인프라 정보">
+    <nav class="md-nav" aria-label="시스템 접속 정보">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        서버 구성
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Docker Compose 서비스
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AWS 정보
+        서버 운영 구성
       
     </span>
   </a>
@@ -549,6 +527,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Compose 운영 서비스
+      
+    </span>
+  </a>
   
 </li>
       
@@ -575,7 +564,7 @@
   <span class="md-ellipsis">
     
   
-    빌드 및 배포
+    시스템 빌드 및 배포
   
 
     
@@ -1361,6 +1350,90 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    요청 가이드
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    요청 가이드
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%9A%94%EC%B2%AD%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%8F%84%EC%BB%A4%EC%BB%B4%ED%8F%AC%EC%A6%88_%EA%B8%B0%EB%B0%98_%EC%9A%B4%EC%98%81_%EB%B0%B0%ED%8F%AC_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    운영 서버 배포 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1391,41 +1464,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        인프라 정보
+        시스템 접속 정보
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="인프라 정보">
+    <nav class="md-nav" aria-label="시스템 접속 정보">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        서버 구성
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Docker Compose 서비스
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AWS 정보
+        서버 운영 구성
       
     </span>
   </a>
@@ -1434,6 +1485,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Compose 운영 서비스
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1459,84 +1521,60 @@
 
 <h1 id="_1">백엔드 — 운영 가이드</h1>
 <hr />
-<h2 id="_2">인프라 정보</h2>
-<h3 id="_3">서버 구성</h3>
+<h2 id="_2">시스템 접속 정보</h2>
+<h3 id="_3">서버 운영 구성</h3>
 <table>
 <thead>
 <tr>
 <th>환경</th>
-<th>호스트</th>
-<th>접근 방법</th>
+<th>접속 도메인 (URL)</th>
+<th>상세 설명</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Dev/Prod</strong></td>
-<td>EC2 (배포 시 동적 할당)</td>
-<td><code>ssh -i heesun.pem ubuntu@&lt;IP&gt;</code></td>
+<td><strong>운영 (Prod)</strong></td>
+<td><a href="http://crawler.i-flow.kr">http://crawler.i-flow.kr</a></td>
+<td>실 구동중인 운영 서버</td>
 </tr>
 <tr>
-<td><strong>로컬 개발</strong></td>
-<td>localhost</td>
-<td>직접 실행</td>
+<td><strong>개발 (Dev)</strong></td>
+<td><a href="http://180.210.80.180">http://180.210.80.180</a></td>
+<td>테스트 및 신규 기능 배포용 개발 서버</td>
+</tr>
+<tr>
+<td><strong>로컬 (Local)</strong></td>
+<td><code>localhost</code></td>
+<td>로컬 개발자 환경</td>
 </tr>
 </tbody>
 </table>
-<h3 id="docker-compose">Docker Compose 서비스</h3>
+<hr />
+<h2 id="docker-compose">Docker Compose 운영 서비스</h2>
+<p>배포 시 <code>docker-compose.prod.yml</code> 에 의해 코어 인프라로 구동되는 핵심 컨테이너 구조입니다.</p>
 <table>
 <thead>
 <tr>
-<th>컨테이너</th>
-<th>이미지</th>
-<th style="text-align: center;">포트</th>
-<th>역할</th>
+<th>컨테이너 명칭</th>
+<th style="text-align: center;">내부 포트</th>
+<th>역할 및 특징</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>vibe-crawler-db</code></td>
-<td><code>postgres:15-alpine</code></td>
 <td style="text-align: center;">5432</td>
-<td>메인 DB</td>
-</tr>
-<tr>
-<td><code>vibe-crawler-migration</code></td>
-<td><code>vibe-migration:latest</code></td>
-<td style="text-align: center;">-</td>
-<td>Alembic 마이그레이션 (1회 실행)</td>
+<td>메인 PostgreSQL 데이터베이스 (외부 DB 사용 시 제외 가능)</td>
 </tr>
 <tr>
 <td><code>vibe-crawler-backend</code></td>
-<td><code>vibe-backend:latest</code></td>
-<td style="text-align: center;">8080→8080</td>
-<td>API 서버 + 스케줄러</td>
-</tr>
-</tbody>
-</table>
-<h3 id="aws">AWS 정보</h3>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>값</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AWS Account ID</td>
-<td><code>850205788233</code></td>
+<td style="text-align: center;">8080</td>
+<td>플랫폼 API 서버 제공 및 크롤링 스케줄링 관리 주체</td>
 </tr>
 <tr>
-<td>Region</td>
-<td><code>ap-northeast-2</code> (서울)</td>
-</tr>
-<tr>
-<td>ECR</td>
-<td><code>vibe-backend</code>, <code>vibe-migration</code></td>
-</tr>
-<tr>
-<td>SSH Key</td>
-<td><code>heesun.pem</code></td>
+<td><code>vibe-crawler-frontend</code></td>
+<td style="text-align: center;">80</td>
+<td>사용자 접근용 UI 뷰어 및 다운로드 포털 웹 서버</td>
 </tr>
 </tbody>
 </table>

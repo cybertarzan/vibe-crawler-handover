@@ -28,6 +28,7 @@ theme:
 nav:
   - Home: index.md
   # - 변경 이력:
+  #   - 2026-04-16: changes/20260416.md
   #   - 2026-04-10: changes/20260410.md
   #   - 2026-03-27: changes/20260327.md
   - Backend:
@@ -35,7 +36,7 @@ nav:
     - 아키텍처 및 설계: backend/02-architecture-and-design.md
     - 운영 가이드:
       - 개요: backend/operations/index.md
-      - 빌드 및 배포: backend/operations/01-build-deploy.md
+      - 시스템 빌드 및 배포: backend/operations/01-build-deploy.md
       - 모니터링 및 로그: backend/operations/02-monitoring-logs.md
       - 외부 서비스 연동: backend/operations/03-external-services.md
       - DB 관리: backend/operations/04-db-management.md
@@ -62,8 +63,8 @@ nav:
   # - 견적서:
   #   - '[ISS-003] 크롤러-워커 통합 견적서': estimates/ISS-003_크롤러-워커분리/ISS-003_최종견적서.md
   - 요청 가이드:
-    - 크롤링 재수집 API: '요청 가이드/크롤링_재수집_API_가이드.md'
-    - 인크로스 매체 데이터 연동 API: '요청 가이드/인크로스_매체_데이터_연동_가이드.md'
+    # - 크롤링 재수집 API: '요청 가이드/크롤링_재수집_API_가이드.md'
+    # - 인크로스 매체 데이터 연동 API: '요청 가이드/인크로스_매체_데이터_연동_가이드.md'
     - 운영 서버 배포 가이드: '요청 가이드/도커컴포즈_기반_운영_배포_가이드.md'
 markdown_extensions:
   - tables
